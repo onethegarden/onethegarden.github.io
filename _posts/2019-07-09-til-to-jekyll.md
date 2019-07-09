@@ -397,15 +397,9 @@ grant resource, connect to finalworkshop;
 
 ## 2. [CSS]
 
-<H5>스타일적용</H5>
-.class
-#id
+<H5>웹 폰트 적용</H5>
+@import사용
 
-<H5>명시도</H5>
-1. 인라인 스타일
-2. id스타일
-3. 클래스 스타일
-4. 태그 스타일
 
 
 
