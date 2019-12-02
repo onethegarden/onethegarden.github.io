@@ -1,57 +1,16 @@
-title: Jeongwon Blog
-description: My Personal blog
-author: Jeongwon
-github: https://github.com/onethegarden
-about: Developer, Designer
-disqus_shortname: ""
-google_analytics: ""
-avatar_url: /static/img/portfolio.jpg
+title: Jeongwon blog
+email: onethegarden@gmail.com
+description: 
+baseurl: "/Mekyll" # the subpath of your site, e.g. /blog
+url: "https://onethegarden.github.io" 
+postCount: 5 # the number of posts on the "index" page
 
-enableTags: true
-tagarray: []
+# Build settings
+markdown: redcarpet
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+permalink   : /:year/:title/
+source: ./
+destination: ./_site
 
-collections:
-  project:
-    output: true
-    permalink: /project/:path/
-
-social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
-    - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
-    - icon: fa-github
-      link: "https://github.com/onethegarden"
-
-share:
-  twitter_username: github.io
-  fb_appid: 1749788565247320
-
-urls:
-    - text: About Me
-      url: /about/
-    - text: My Projects
-      url: /projects/
-    - text: XML Feed
-      url: /feed.xml
-
-url: "https://onethegarden.github.io"
-baseurl: ""
-paginate: 20
-per_page: 20
-paginate_path: "/page/:num/"
-markdown: kramdown
-gems:
-  - jekyll-paginate
-  - jekyll-gist
-
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  ignore:
-    envs: ['development']
+redcarpet:
+  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "fenced_code_blocks"]
