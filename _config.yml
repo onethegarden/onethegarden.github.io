@@ -1,7 +1,7 @@
 title: Jeongwon blog
 email: onethegarden@gmail.com
 description: 
-baseurl: "/Mekyll" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://onethegarden.github.io" 
 postCount: 5 # the number of posts on the "index" page
 
