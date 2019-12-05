@@ -6,9 +6,9 @@ permalink: /about/
 
 
 
-### More Information
+### 정원이 블로그
 
-A place to include any other types of information that you'd like to include about yourself.
+정원이 블로그 입니다.
 
 ### Contact me
 
