@@ -3,8 +3,10 @@ layout: page
 title: About
 ---
 
-Hello.
+✨안녕하세요✨
 
-This will be your About page. Anything about you, it should be written here in details. You may describe your bio here like who you are, what you do, your intention, social site hyperlinks and how people can contact you, etc.
+이제 막 개발을 시작한 정원이의 개발 공부 블로그 입니다. 면접준비부터 기본기까지 제가 공부하는 것들을 기록합니다.
 
-**Less is more..**
+수정해야할 내용이 있거나 추가할 내용이 있으면 메일주세요!😊
+
+**onethegarden@gmail.com**
