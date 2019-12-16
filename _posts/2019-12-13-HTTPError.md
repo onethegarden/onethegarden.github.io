@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTTP Error page
+title:  HTTP Status Codes
 ---
 
 
