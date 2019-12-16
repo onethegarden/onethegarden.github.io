@@ -1,21 +1,31 @@
---- 
-layout: default 
---- 
-{% for post in site.posts limit:site.postCount %}
-<div class="post">
-  <div class="post__meta">
-    <div class="post__title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
-    <div class="post__text">
-      {{ post.excerpt }}
-    </div>
-    <div class="post__postfix">
-      <span class="post__date">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <span class="post__postfix--separator"></span>
-      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">Read more...</a>
-    </div>
-  </div>
-</div>
-{% endfor %}
-<div class="more_posts">
-  <a href="{{ '/archive' | prepend: site.baseurl | prepend: site.url }}">All posts...</a>
-</div>
+---
+layout: default
+---
+
+<section>
+
+	{% for post in site.posts %}
+		{% unless post.next %}
+			<h3 class="code">{{ post.date | date: '%Y' }}</h3>
+		{% else %}
+			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+			{% if year != nyear %}
+				<h3 class="code">{{ post.date | date: '%Y' }}</h3>
+			{% endif %}
+		{% endunless %}
+
+		<ul>
+			<li>
+				<div class="post-date code">
+					<span>{{ post.date | date: "%b %d" }}</span>
+				</div>
+				<div class="title">
+					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+				</div>
+			</li>
+		</ul>
+
+	{% endfor %}
+
+</section>

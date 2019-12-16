@@ -1,16 +1,10 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
+Hello.
 
+This will be your About page. Anything about you, it should be written here in details. You may describe your bio here like who you are, what you do, your intention, social site hyperlinks and how people can contact you, etc.
 
-### 정원이 블로그
-
-이제 막 걸음마를 뗀 👶초보개발자👶입니다.
-
-### Contact me
-
-[onethegarden@gmail.com](mailto:onethegarden@gmail.com)
-
+**Less is more..**
