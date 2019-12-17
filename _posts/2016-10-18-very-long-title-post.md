@@ -1,5 +1,5 @@
 ---
-title: [MarkDown]Example
+title: MarkDown Example
 updated: 2016-10-18 23:37
 ---
 
