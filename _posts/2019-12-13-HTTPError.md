@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  [HTTP] HTTP Status Codes
+title:  HTTP HTTP Status Codes
 ---
 
 

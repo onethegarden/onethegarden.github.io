@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Spring interview] Prepareation
+title: Spring interview Prepareation
 ---
 
   

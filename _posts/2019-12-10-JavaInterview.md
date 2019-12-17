@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Java] interview Prepareation
+title: Java interview Prepareation
 ---
 
 
