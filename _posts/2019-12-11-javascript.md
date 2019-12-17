@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Javascript interview Preparation
+title: [Javascript] interview Preparation
 ---
 
 #Javascript Scope
