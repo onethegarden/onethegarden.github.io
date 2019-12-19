@@ -6,6 +6,23 @@ title: Spring interview Prepareation
   
 # Spring
 
+**0. Spring의 객체**
+
+	1. DispatcherServlet
+		- Spring framework가 제공하는 Servlet클래스
+		- 사용자의 요청을 받음
+		- Dispatcher가 받은 요청을 Handler Mapping으로 넘어감
+	2. HandlerMapping
+		- 사용자의 요청을 처리할 Controller를 찾음( url로 )
+		- 요청 url에 해당하는 Controller정보를 저장하는 table을 가짐
+		- @RrequestMapping("/url")
+	3. ViewResolver
+		- Controller가 반환한 View Name에 prefix(접두어, /WEB-INF/views/), suffix(접미어, .jsp)를 적용하여 View Object를 반환(SErvlet.xml)
+		
+	출처 : https://gmlwjd9405.github.io/2018/12/20/spring-mvc-framework.html
+
+
+
 
 
 
@@ -41,26 +58,24 @@ title: Spring interview Prepareation
 
 **4. Filter와 Interceptor**
 - Filter와 Interceptor는 실행되는 시점이 다르다.
+- Filter는 Dispatcher Servlet전, Interceptor는 후 
 
 
 
 
-**5.pojo, Dispatcher Servlet**
+**5.pojo**
 
 - pojo 
 	1. plain old java object
 	2. 특정한 인터페이스를 구현하거나 상속을 받을 필요가 없음. 기존에 존재하는 라이브러리를 지원
 
-- Dispatcher Servlet 
-	1.일종의 front controller, 
 
 
+**6. Spring MVC구조 처리과정**
 
-**6.annotation**
+![Spring MVC](http://thumbnail.egloos.net/600x0/http://pds21.egloos.com/pds/201202/24/49/d0144949_4f47a0b19ed33.png)
 
 
-
-**7. Spring MVC구조 처리과정**
 
 1. 클라이언트가 server에 request요청
 
