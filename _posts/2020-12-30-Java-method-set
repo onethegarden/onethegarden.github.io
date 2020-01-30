@@ -1,0 +1,16 @@
+---
+layout: post
+title: Java set method
+---
+
+Front에서 controller로 값을 넘겨서 
+Request로 받을 때 
+하나하나 vo.serValue(request.getparameter("name"));
+으로 해주는 것보다
+
+담을 객체의 길이만큼 for문을 돌려서
+set+첫글자 uppercase로 해서 넣어준다
+
+그리고 자바 invoke함수를 사용하여 넣어준다
+
+자세한 코드는 다음에!
