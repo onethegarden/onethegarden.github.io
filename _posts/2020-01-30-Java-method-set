@@ -13,4 +13,22 @@ set+첫글자 uppercase로 해서 넣어준다
 
 그리고 자바 invoke함수를 사용하여 넣어준다
 
-자세한 코드는 다음에!
+Ex) 
+
+'''java
+method.invoke(object obj, Object[] args);
+
+//obj위치에 객체를 넣고 배열 위치에 파라미터를 넣는다
+'''
+
+
+
+
+
+ - 자바 리플렉션
+ 
+ 컴파일된 자바 코드에서 역으로 클래스를 불러서 메소드(Method) 및 변수(Field)를 구해오는 방법
+ 
+ 
+
+
