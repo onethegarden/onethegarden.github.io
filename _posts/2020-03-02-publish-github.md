@@ -1,6 +1,6 @@
 ---
 layout: post
-title: publish Github 
+title: Publish Github 
 ---
 
 1.  install 'npm i gh-page'
@@ -9,7 +9,7 @@ title: publish Github
 2. put a homepage on the package that JSON
 
 ```json
-  "homepage": "https://onethegarden.github.io/movie-app"
+  "homepage": "https://onethegarden.github.io/Movie-app"
 ```
 
 
