@@ -10,17 +10,17 @@ title: Oracle subquery
 
 1. where 절에 서브쿼리 사용
 
-'''Sql
+```Sql
 
 SELECT NAME 
 FROM ANIMAL_INS
 WHERE DATETIME =(SELECT MIN(DATETIME)FROM ANIMAL_INS)
 
-'''
+```
 
 
 2. rownum사용
-'''sql
+```sql
 SELECT NAME 
 FROM ANIMAL_INS
     (SELECT NAME 
@@ -28,7 +28,7 @@ FROM ANIMAL_INS
      ORDER BY DATETIME
      )
 WHERE ROWNUM=1
-'''
+```
 
 
 
@@ -38,35 +38,35 @@ WHERE ROWNUM=1
 
 1. NOT IN
 
-'''sql
+```sql
 SELECT ANIMAL_ID, NAME
 FROM ANIMAL_OUTS
 WHERE ANIMAL_ID NOT IN 
      (SELECT ANIMAL_ID 
       FROM ANIMAL_INS) 
-'''
+```
 
 
 
 2. NOT EXISTS
 
-'''sql
+```sql
 SELECT ANIMAL_ID, NAME
 FROM ANIMAL_OUTS
 WHERE ANIMAL_ID NOT EXISTS 
      (SELECT ANIMAL_ID 
       FROM ANIMAL_INS) 
-'''
+```
 
 3. Minus
 
-'''Sql
+```Sql
 SELECT ANIMAL_ID,NAME
 FROM ANIMAL_OUTS
 MINUS
 SELECT ANIMAL_ID,NAME
 FROM ANIMAL_INS
-'''
+```
 
 
 
