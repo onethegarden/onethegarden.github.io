@@ -3,9 +3,15 @@ layout: post
 title: React router
 ---
 
-##React router
+## React router ##
+
+
+
  - changing page using React
+
  - cant using navigation outside Router
+
+   
 
 
 **App.js**
@@ -39,6 +45,8 @@ function Naviation(){
 }
 ```
 html refresh page, react die
+
+
 
 
 

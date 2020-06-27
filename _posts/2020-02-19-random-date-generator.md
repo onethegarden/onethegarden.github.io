@@ -3,8 +3,9 @@ layout: post
 title: Js random date generator
 ---
 
+## Random date generator##
 
-**Random date generator**
+
 
 
 

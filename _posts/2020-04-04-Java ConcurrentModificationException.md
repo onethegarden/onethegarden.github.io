@@ -1,10 +1,13 @@
- ---
+---
 layout: post
-title: Java ConcurrentModificationException
+title: ConcurrentModificationException
 ---
 
 
-##ConcurrentModificationException 
+
+
+
+## ConcurrentModificationException ##
 
 
 >This exception may be thrown by methods that have detected concurrent modification of an object when such modification is not permissible.

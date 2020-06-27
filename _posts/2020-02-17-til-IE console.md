@@ -3,8 +3,7 @@ layout: post
 title: IE Console Error
 ---
 
-
-**IE Console Error Debug**
+## IE Console Error Debug ##
 
 
 
