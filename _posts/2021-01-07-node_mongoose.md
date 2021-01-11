@@ -17,14 +17,16 @@ $ yarn add mongoose dotenv
 
 - detenv : 환경변수들 설정 할 수 있는 파일, 서버주소나 계정, 비밀번호 작성
 
-- .env
+- .env (환경변수 설정 파일, git에 올릴 때 **gitignore에 필수 작성!**)
 
   ```
   PORT=4000
   MONGO_URI=mongodb://localhost:27017/blog
   ```
 
-- src/index.js - Node.js에서 환경변수는 process.env로 조회 가능
+- src/index.js - Node.js에서 환경변수는 **process.env**로 조회 가능
+
+- console로 process.env를 찍어보면 설정한 값을 포함하여 여러 값이 많이 나온다. 
 
   ```javascript
   require('dotenv').config();
@@ -66,6 +68,52 @@ $ yarn add mongoose dotenv
   });
   
   ```
+
+
+
+
+
+- Model 설정
+
+  - moongoose의 **schema** : 컬렉션에 들어가는 문서 내부의 필드의 형식을 정의하는 객체
+
+    ```
+    {
+    	title: String,
+    	active: Boolean,
+    	date: Date
+    }
+    ```
+
+  - moongoose의 **model** : 스키마를 사용하여 만드는 인스턴스, DB에서 실제 처리할 수 있는 함수들을 가지고 있음
+
+  
+
+- post.js  파일 작성 (Model) : Schema를 정의 한 후 모델을 생성
+
+  ```javascript
+  import mongoose from 'mongoose';
+  
+  const { Schema } = mongoose;
+  
+  const PostSchema = new Schema({
+      title: String,
+      body: String,
+      tags:[String], //문자열로 이루어진 배열
+      publishedDate:{
+          type: Date,
+          default: Date.now, //현재 날짜를 기본으로
+      }
+  })
+  
+  const Post = mongoose.model('Post', PostSchema); //모델 인스턴스 만들기
+  export default Post;
+  
+  ```
+
+  
+
+  
 
 
 
@@ -210,27 +258,63 @@ $ yarn add mongoose dotenv
   
   ```
 
-  - Joi : 객체가 해당 필드를 가지고 있는지 검증
+  
 
-    ex)
+- **함수정리**
 
-    ```
-    const schema = Joi.object().keys({
-        //객체가 다음 필드를 가지고 있음을 검증
-        title: Joi.string().required(),
-        body: Joi.string().required(),
-        tags: Joi.array().items(Joi.string()).required(),
-      });
-      //검증하고 나서 검증 실패한 경우 에러 처리
-      const result = schema.validate(ctx.request.body);//실패시 
-      //실패시 result.error 
-    ```
+  1. object 검증
 
-    
+     ```
+      ObjectId.isvalid(object);//true, false 반환
+     ```
 
-  - Object 검증 : ObjectId.isvalid(object); 함수로 검증
+  2. 값 찾기 
+
+     ```
+     find();
+     ```
+
+  3. id로 값찾기
+
+     ```
+     findById(id);
+     ```
+
+  4. 특정 값 삭제
+
+     ```
+     findByIdAndRemove(id);
+     ```
+
+  5. 특정 값 수정
+
+     ```
+     findByIdAndUpdate(id, updateObject, {new: true})
+     ```
+
+     - new : true는 업데이트 된 데이터를 반활할지에 대한 설정값이다. false로 하면 업데이트 하기 전의 값을 반환한다. 
 
 
+
+
+
+
+
+- ***Joi*** : 객체가 해당 필드를 가지고 있는지 검증
+
+ex)
+
+```
+const schema = Joi.object().keys({
+    //객체가 다음 필드를 가지고 있음을 검증
+    title: Joi.string().required(),
+    body: Joi.string().required(),
+    tags: Joi.array().items(Joi.string()).required(),
+  });
+  //검증하고 나서 검증 실패한 경우 에러 처리
+  const result = schema.validate(ctx.request.body);//실패시 
+  //실패시 result.error 
+```
 
 
 
