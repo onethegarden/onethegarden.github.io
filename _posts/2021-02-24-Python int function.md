@@ -1,12 +1,12 @@
 ---
 layout: post
 title: python int function
-
 ---
 
 
 
-# python int함수 n진법
+## python int함수 n진법 ##
+
 
 
 
