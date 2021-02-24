@@ -21,7 +21,7 @@ answer = int(number, base) #(변환할 수 , 진법)
 
 
 
-</br></br>
+
 
 ### 1. 문제
 
@@ -49,7 +49,9 @@ def solution(n):
     return answer
 
 ```
-</br></br>
+
+
+
 - 내 풀이는 총 세단계로 이루어 졌는데, 2와 3은 파이썬 ```int()``` 함수를 이용해 진법 변환이 가능하다.
 
   ```python
@@ -71,6 +73,5 @@ def solution(n):
 
   
 
-</br></br>
 
 참고 : https://programmers.co.kr/learn/courses/4008/lessons/12733
