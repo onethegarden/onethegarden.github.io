@@ -59,13 +59,13 @@ title: vanillaJs infiniteScroll
 
 - entries : IntersectionObserverEntry 인스턴스의 배열
 
-  - `boundingClientRect`: 관찰 대상의 사각형 정보([DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly))
-  - `intersectionRect`: 관찰 대상의 교차한 영역 정보([DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly))
+  - `boundingClientRect`: 관찰 대상의 사각형 정보
+  - `intersectionRect`: 관찰 대상의 교차한 영역 정보
   - `intersectionRatio`: 관찰 대상의 교차한 영역 백분율(`intersectionRect` 영역에서 `boundingClientRect` 영역까지 비율, Number)
   - `isIntersecting`: 관찰 대상의 교차 상태(Boolean)
-  - `rootBounds`: 지정한 루트 요소의 사각형 정보([DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly))
-  - `target`: 관찰 대상 요소([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element))
-  - `time`: 변경이 발생한 시간 정보([DOMHighResTimeStamp](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp))
+  - `rootBounds`: 지정한 루트 요소의 사각형 정보
+  - `target`: 관찰 대상 요소
+  - `time`: 변경이 발생한 시간 정보
 
   
 
