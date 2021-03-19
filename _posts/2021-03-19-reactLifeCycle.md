@@ -116,8 +116,6 @@ export default Counter;
 
 
 
-#### 요약 
-
 
 
 
@@ -255,7 +253,7 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 
 
 
-#### 3. 업데이트
+#### 3. 언마운트
 
 ```react
 // componentWillUnmount : 컴포넌트가 화면에서 사라지기 전에 호출
