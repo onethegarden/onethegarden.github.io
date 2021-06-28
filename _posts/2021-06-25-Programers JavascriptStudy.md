@@ -5,13 +5,13 @@ title: Programers JavascriptStudy Review
 
 
 
-## Programers JavascriptStudy Review
+# Programers JavascriptStudy Review
 
 >프로그래머스 자바스크립트 스터디에서 배운 것들과 정보들을 정리하고자 한다. 
 
+<br/><br/><br/><br/><br/><br/>
 
-
-### 시작 전 참고자료
+## 시작 전 참고자료
 
 - [JavaScript 첫걸음](https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps) - MDN의 자바스크립트 입문 문서
 - [JavaScript 재입문하기](https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript) - 오해받고 있는? 자바스크립트에 대해 짧게 요약해둔 문서 ( 잘 모르고 쓰면 오류가 나는 부분들을 다시 짚어보자)
@@ -19,9 +19,20 @@ title: Programers JavascriptStudy Review
 - [자바스크립트의 비동기 처리와 콜백함수](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/) - 자바스크립트의 비동기 처리에 대한 블로그 글
 - [DOM은 무엇일까?](https://wit.nts-corp.com/2019/02/14/5522) - DOM에 대해 정리해둔 아티클
 
+<br/><br/><br/><br/>
 
+## 책 추천
 
-### 사전퀴즈
+- 더글라스 크락포드의 자바스크립트 핵심가이드 - 더글라스 크락포드
+- 자바스크립트는 왜 그 모양일까? - 더글라스 크락포드
+- 자바스크립트 성능 최적화 - 니콜라스 자카스
+- 모던 자바스크립트 - 니콜라스 자카스 (es6문법 이해하는데 좋음)
+- 읽기 좋은 자바스크립트 코딩 기법 - 니콜라스 자카스
+- you don't know js - 중급자에게 추천
+
+<br/><br/><br/><br/>
+
+## 사전퀴즈
 
 - 1번 문제 - new
 
@@ -36,9 +47,11 @@ title: Programers JavascriptStudy Review
 
   > 🔑 오류가 발생한다. 
 
-  `apply`, `call`, `bind` 등으로 `this`에 대해 주입한 상황이 아니고 `new` 키워드없이 실행한 함수 내 this는 전역 객체(window)를 바라보기 때문에 에러가 발생
+  `apply`, `call`, `bind` 등으로 `this`에 대해 주입한 상황이 아니고 **`new` 키워드없이** 실행한 함수 내 this는 전역 객체(window)를 바라보기 때문에 에러가 발생
 
+  ```new```를 붙이지 않았을 때 에러처리 필요 -> ```new.target```으로 확인 가능! 
 
+<br/>
 
 - 2번 문제 - 즉시실행함수
 
@@ -51,8 +64,10 @@ title: Programers JavascriptStudy Review
   > 🔑  ```hello roto```가 출력된다.
 
   즉시실행함수 (IIFE, Immediately Invoked Function Expression) 이 함수를 정의함과 동시에 실행되기 때문에
+  
+  즉시실행함수 사용 이유 : 전역공간을 더럽히지 않고 코드를 모듈러 하려고 썼던 기법, 최근에는 const 나 let, 웹팩이나 모듈화되면서 그 역할들을 걔들이 해주고 있음
 
-
+<br/>
 
 - 3번 문제 - 함수의 스코프
 
@@ -79,9 +94,7 @@ title: Programers JavascriptStudy Review
 
   해결하려면  ```console.log(`band ${idiots.name} ${this.memberName} play start.`)```
 
-
-
-
+<br/>
 
 - 4번 문제 - 해당 코드를 실행하면 에러가 나는데, 의도대로 실행하는 방법을 아는대로 설명
 
@@ -111,7 +124,7 @@ title: Programers JavascriptStudy Review
   >
   > ```javascript
   > function RockBand(members) {
-  >     var that = this;
+  >     var that = this;//context 밖에 있는 변수에 접근하기 위한 것 
   >     this.members = members;
   >     this.perform = function() {
   >       setTimeout(function(){
@@ -135,7 +148,7 @@ title: Programers JavascriptStudy Review
   >   }
   > ```
 
-
+<br/>
 
 - 5번 문제 - 해당 코드를 실행하면 숫자가 순차적으로 출력되지 않고 5만 출력된다. 왜 그런 현상이 발생하는지, 어떻게 수정하면 좋을지 서술
 
@@ -148,26 +161,26 @@ title: Programers JavascriptStudy Review
   }
   ```
 
-  >  setTimeout이 실행되는 시점에는 루프가 이미 끝나있어서 i=5 임
+  >  setTimeout이 실행되는 시점에는 루프가 이미 끝나있어서 ```i=5``` 임 
   >
-  > 🔑 var i = 0 을 let i=0으로 쓰는 것으로 해결
+  >  실제로 for문 안의 ```var```은 ```global```영역임
   >
-  > 🔑 setTimeout을 IIFE로 감싸고 파라메터로 i를 넘기는 것으로 해결 
+  >  🔑 ```var i = 0``` 을 ```let i = 0```으로 쓰는 것으로 해결
   >
-  > ```javascript
-  > const numbers = [1, 2, 3, 4, 5];
-  > for(var i = 0; i < numbers.length; i++){ 
-  >   (function(count){
-  >     setTimeout(function(){
-  >       console.log(`number index ${count}`);
-  >     }, 1000);
-  >   })(i)
-  > }
-  > ```
+  >  🔑 setTimeout을 IIFE로 감싸고 파라메터로 i를 넘기는 것으로 해결 
+  >
+  >  ```javascript
+  >  const numbers = [1, 2, 3, 4, 5];
+  >  for(var i = 0; i < numbers.length; i++){ 
+  >  (function(count){
+  >   setTimeout(function(){
+  >     console.log(`number index ${count}`);
+  >   }, 1000);
+  >  })(i)
+  >  }
+  >  ```
 
-
-
-
+<br/>
 
 - 7번 문제 - var, let, const차이
 
@@ -188,7 +201,7 @@ title: Programers JavascriptStudy Review
   >arr.push(1); //가능
   >```
 
-
+<br/>
 
 - 8번 문제 - 클로저란?
 
@@ -205,33 +218,57 @@ title: Programers JavascriptStudy Review
   >
   >https://hyunseob.github.io/2016/08/30/javascript-closure/
 
+<br/><br/><br/><br/>
 
+## 코드리뷰
 
-### 1강 
+1. EOL (End of line)
 
+   ![image](https://user-images.githubusercontent.com/51187540/123635773-01ddce80-d857-11eb-8ffe-df2f9535d2ad.png)
 
+   - GitHub에서 이런 표시를 볼 수 있을 것이다.
 
-### 2강  
+     new line으로 끝나지 않은 행은 실제 행으로 간주되지 않을수도 있다.  항상 맨 아래에 비어있는 행을 추가하여 파일이 끝났음을 알려주어야 한다. POSIX명세에 이렇게 써있다.
 
--  [리액트처럼 사고하기](https://ko.reactjs.org/docs/thinking-in-react.html)
--  [타입스크립트 무료강의](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%A6%AC%EC%95%84-1705-%EA%B8%B0%EC%B4%88-%EC%84%B8%EB%AF%B8%EB%82%98#)
+     ```
+     3.206 Line
+     A sequence of zero or more non- <newline> characters plus a terminating <newline> character.
+     ```
 
+     prettier를 통해 저장시 자동으로 이 행이 추가되게 설정할 수 있다.
 
+     ```
+     {
+       "endOfLine": "auto",
+     }
+     ```
 
+     
 
+<br/><br/><br/><br/>
 
-### 3강  
+## 인사이트
+
+-  [Javascript Naming Convention](https://www.robinwieruch.de/javascript-naming-conventions) 
+   -  애증의 Naming,,, **읽기 쉬운 변수명을 만들자!**
+-  [리액트처럼 사고하기 ](https://ko.reactjs.org/docs/thinking-in-react.html) 
+   -  vanilla js로 리액트스럽게? 설계를 하고 싶을 때 참고하면 좋을 문서, component를 나누고 state를 어떻게 관리할지 참고할 수 있다.
 
 - [구글 - 브라우저의 렌더링 순서](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model)
-  - ex) 브라우저 주소창에 www.naver.com을 쳤을 때 화면이 뜨기까지 설명하세요가 면접 단골질문이므로 숙지하도록 하자 ! (Render-tree Construction, Layout, and Paint 까지는 필수로 읽어보기)
+  - ex) 브라우저 주소창에 www.naver.com을 쳤을 때 화면이 뜨기까지 설명하세요가 **면접 단골질문**이므로 숙지하도록 하자 ! (Render-tree Construction, Layout, and Paint 까지는 필수로 읽어보기)
   - [네이버 - 브라우저는 어떻게 동작하는가]( https://d2.naver.com/helloworld/59361)
 - [브라우저의 Reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
   - 브라우저의 relflow를 유발하는 요소들에 대한 설명
 
-
-
-### 4강
-
 - [파이썬 - CodeTags](https://www.python.org/dev/peps/pep-0350/#id22)
   - 주석을 달 때 TODO, FIXME, HACK 와 같은 키워드랑 같이 써서 전체검색해서 고치는 시간을 갖는 것도 좋다
 - [비동기함수와 일반함수, 비동기 함수의 callback 시각화](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
+- [리액트 만들기 튜토리얼](https://pomb.us/build-your-own-react/) 
+  - 일단,, 사이트가 좋아보인다 스크롤에 반응해 코드가 나타나고 사라진다,,,다른 분이 슬랙에서 이 코드를 보고 Hook의 내부원리를 이해하는데 도움이 되었다고 한다! 
+- [시멘틱 웹이란?](https://www.semrush.com/blog/semantic-html5-guide/?kw=&cmp=EA_SRCH_DSA_Blog_SEO_EN&label=dsa_pagefeed&Network=g&Device=c&utm_content=431603845883&kwid=dsa-834686684576&cmpid=9874915430&gclid=Cj0KCQjwhZr1BRCLARIsALjRVQMALQ-PFX7NKeCiHJWm3AkRMnvnh5f6j9gz2Dqpik6RZZmo0Akzst8aAkdLEALw_wcB)
+  - HTML의 시멘틱 태그에 대한 글, 시멘틱 웹이 왜 필요한지, 태그의 구조 등
+
+<br/><br/><br/><br/>
+
+## 느낀점
+
