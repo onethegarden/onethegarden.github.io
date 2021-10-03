@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Git modify commit Username
+title: Git rebase edit 사용하기
 ---
 
 
 
-## Git modify commit Username
+## Git rebase edit 사용하기
 
 >username이 잘못 커밋되었을 때 커밋을 수정해보자!
 
