@@ -1,4 +1,4 @@
-# gatsby로 만드는 기술 블로그
+# onethegarden blog
 
 ## 실행방법
 
