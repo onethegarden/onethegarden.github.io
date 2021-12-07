@@ -8,7 +8,7 @@ type NavigationProps = {
 
 function Navigation({ pathname }: NavigationProps) {
   const menus = [
-    { name: 'post', link: '/' },
+    { name: 'posts', link: '/' },
     { name: 'categories', link: '/categories' },
   ];
   return (

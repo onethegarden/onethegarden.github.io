@@ -1,8 +1,8 @@
 ---
 layout: post
 title: React LIfecycle of Component
-categories: ["React"]
-thumbnail: "../images/react.png"
+categories: ['React']
+thumbnail: '../images/react.png'
 ---
 
 ## React LIfecycle of Component
@@ -11,17 +11,19 @@ thumbnail: "../images/react.png"
 >
 > 현재는 클래스형을 많이 사용하지는 않는다고 하지만 그래도 알고 있어야 될 것 같아 정리한다.
 
-##### 먼저 클래스형과 함수형의 차이부터 알아보자!
+### 먼저 클래스형과 함수형의 차이부터 알아보자!
 
 - 클래스형
 
-```react
-import React, {Component} from 'react';
+```javascript
+import React, { Component } from 'react';
 
-class App extends Component { //클래스로 선언하고 Component를 상속받아 사용해야 한다.
-  render() { //렌더 메소드가 반드시 필요하다.
+class App extends Component {
+  //클래스로 선언하고 Component를 상속받아 사용해야 한다.
+  render() {
+    //렌더 메소드가 반드시 필요하다.
     const name = 'react';
-    return <div className="react">{name}</div>
+    return <div className="react">{name}</div>;
   }
 }
 
@@ -30,13 +32,13 @@ export default App;
 
 - 함수형
 
-```react
+```javascript
 import React from 'react';
 import './App.css';
 
 function App() {
   const name = 'react';
-  return <div className = "react">{name}</div>
+  return <div className="react">{name}</div>;
 }
 
 export default App;
@@ -53,15 +55,15 @@ export default App;
 
 - 클래스형 컴포넌트 예제
 
-```react
+```javascript
 import React, { Component } from 'react';
 
 class Counter extends Component {
-    //클래스형 컴포넌트에서는 클래스 내의 constructor 메서드에서 state의 초기값을 설정해줘야 함.
+  //클래스형 컴포넌트에서는 클래스 내의 constructor 메서드에서 state의 초기값을 설정해줘야 함.
   constructor(props) {
     super(props); //반드시 호출해줘야 함
     this.state = {
-      number: 0
+      number: 0,
     };
   }
   render() {
@@ -104,7 +106,7 @@ export default Counter;
 
 #### 1. 마운트
 
-```react
+```javascript
 /*
 *    1. constructor
 *    2. getDerivedStateFromProps
@@ -162,7 +164,7 @@ static getDerivedStateFromProps(nextProps, prevState) {
 
 #### 2. 업데이트
 
-```react
+```javascript
 /*
 *    getDerivedStateFromProps
 *    shouldComponentUpdate
@@ -223,7 +225,7 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 
 #### 3. 언마운트
 
-```react
+```javascript
 // componentWillUnmount : 컴포넌트가 화면에서 사라지기 전에 호출
 // DOM에 직접 등록했었던 이벤트 제거, setTimeout과 같은 것이 있으면 clearTimeout을 통하여 제거
  componentWillUnmount() {
@@ -254,13 +256,13 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 
 1. 코드를 먼저 보자
 
-```react
- useEffect(() => {
-    console.log("컴포넌트가 화면에 나타남");
-    return () => {
-      console.log("컴포넌트가 화면에서 사라짐"); //cleanup함수
-    };
-  }, []);
+```javascript
+useEffect(() => {
+  console.log('컴포넌트가 화면에 나타남');
+  return () => {
+    console.log('컴포넌트가 화면에서 사라짐'); //cleanup함수
+  };
+}, []);
 ```
 
 - `useEffect(함수, 의존배열(deps))` : `useEffect`의 첫 번째 파라미터에는 함수, 두 번째 파라미터에는 의존값이 들어있는 배열(deps) 를 넣는다.
