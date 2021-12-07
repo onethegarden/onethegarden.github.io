@@ -79,19 +79,20 @@ const MarkdownBlock = styled.div`
 
   h1 {
     font-size: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
   }
 
   h2 {
     font-size: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 1.2rem;
     margin-bottom: 1rem;
   }
 
   h3 {
     font-size: 1rem;
     margin: 0.2rem 0;
+    margin-top: 0.8rem;
   }
   p {
     margin-left: 0;
@@ -105,10 +106,13 @@ const MarkdownBlock = styled.div`
   }
 
   blockquote {
-    margin: 2rem 0;
+    margin: 1rem 0;
     padding: 1rem 1.2rem;
-    border-left: 4px solid ${({ theme }) => theme.color.blue4};
-    background-color: ${({ theme }) => theme.color.blue1};
+    border-left: 5px solid ${({ theme }) => theme.color.gray5};
+    background-color: ${({ theme }) => theme.color.gray2};
+    pre {
+      margin: 1rem 0;
+    }
   }
 
   ol,
@@ -125,17 +129,28 @@ const MarkdownBlock = styled.div`
     color: ${({ theme }) => theme.color.blue4};
     text-decoration: underline;
   }
+  p {
+    margin: 0;
+  }
 
   img {
     max-width: 100%;
     box-sizing: border-box;
     padding: 1rem;
   }
+  table {
+    margin: 0.5rem 0;
+  }
   table,
   th,
   td {
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid ${({ theme }) => theme.color.gray3};
+    padding: 0.2rem 0.4rem;
+    font-size: 0.9rem;
+  }
+  th {
+    background-color: ${({ theme }) => theme.color.gray2};
   }
 `;
 
