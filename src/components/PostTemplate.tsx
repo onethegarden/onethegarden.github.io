@@ -8,10 +8,10 @@ import MarkDownStyle from './common/MarkdownStyle';
 import { Data } from '../pages/index';
 
 const PostTitle = styled.h1`
-  font-weight: 800;
-  font-size: 2.5rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-top: 0.75rem;
   border-bottom: 0.8px solid #afafaf;
 `;
 const MarkdownBlock = styled.div`
@@ -23,43 +23,35 @@ const MarkdownBlock = styled.div`
   line-height: 1.8;
   font-size: 16px;
   font-weight: 400;
-  p {
-    padding: 3px 0;
-    margin-bottom: 0.8125rem;
-  }
-
   h1,
   h2,
   h3 {
-    font-weight: 800;
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
   }
 
   h1 {
-    font-size: 2.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: 0.75rem;
   }
 
   h2 {
-    font-size: 1.5rem;
-    margin-top: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 1.5;
   }
 
   h3 {
-    font-size: 1rem;
-    margin: 0.2rem 0;
-    margin-top: 0.8rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
   }
   p {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
     line-height: 1.6rem;
+    margin: 0.4rem 0;
   }
 
   blockquote {
@@ -74,9 +66,9 @@ const MarkdownBlock = styled.div`
 
   ol,
   ul {
-    margin-left: 20px;
+    margin: 1rem 0;
+    margin-left: 2rem;
   }
-
   hr {
     border: 1px solid ${({ theme }) => theme.color.black};
     margin: 100px 0;
@@ -85,9 +77,9 @@ const MarkdownBlock = styled.div`
   a {
     color: ${({ theme }) => theme.color.blue4};
     text-decoration: underline;
-  }
-  p {
-    margin: 0;
+    &:hover {
+      color: ${({ theme }) => theme.color.blue4};
+    }
   }
 
   img {
