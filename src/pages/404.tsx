@@ -3,24 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import LayoutTemplate from '../components/layout';
 
-function PageNotFound() {
-  return (
-    <LayoutTemplate pageTitle={'404: Not Found'}>
-      <PageNotFoundBlock>
-        <Inform>
-          <ErrorCode>404</ErrorCode>
-          <ErrorMessage>
-            <p>요청하신 페이지를 찾을 수 없습니다</p>
-            <p>입력하신 주소가 정확한지 다시 한번 확인해 주세요.</p>
-          </ErrorMessage>
-          <ToMain to="/">main페이지로</ToMain>
-        </Inform>
-      </PageNotFoundBlock>
-    </LayoutTemplate>
-  );
-}
-
-const PageNotFoundBlock = styled.div``;
 const ToMain = styled(Link)`
   font-size: 1.2rem;
   padding: 1.5rem;
@@ -28,7 +10,8 @@ const ToMain = styled(Link)`
   padding: 0.2rem 1rem;
   background-color: ${({ theme }) => theme.color.gray1};
   color: ${({ theme }) => theme.color.gray5};
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 `;
 const ErrorMessage = styled.div`
   margin-bottom: 2rem;
@@ -49,5 +32,22 @@ const ErrorCode = styled.h1`
   font-weight: bold;
   color: ${({ theme }) => theme.color.blue4};
 `;
+
+function PageNotFound() {
+  return (
+    <LayoutTemplate pageTitle="404: Not Found">
+      <div>
+        <Inform>
+          <ErrorCode>404</ErrorCode>
+          <ErrorMessage>
+            <p>요청하신 페이지를 찾을 수 없습니다</p>
+            <p>입력하신 주소가 정확한지 다시 한번 확인해 주세요.</p>
+          </ErrorMessage>
+          <ToMain to="/">main페이지로</ToMain>
+        </Inform>
+      </div>
+    </LayoutTemplate>
+  );
+}
 
 export default PageNotFound;

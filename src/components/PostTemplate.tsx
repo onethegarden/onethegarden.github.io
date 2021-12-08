@@ -1,55 +1,12 @@
 import React from 'react';
-import Layout from '../components/layout';
 import styled from 'styled-components';
-import 'gatsby-remark-vscode/styles.css';
 import { graphql } from 'gatsby';
+import 'gatsby-remark-vscode/styles.css';
+
+import Layout from './layout';
 import MarkDownStyle from './common/MarkdownStyle';
 import { Data } from '../pages/index';
 
-type PostTempalteProps = {
-  data: Data;
-};
-
-const PostTemplate = React.memo(
-  ({
-    data: {
-      allMarkdownRemark: { edges },
-    },
-  }: PostTempalteProps) => {
-    const {
-      node: { html, frontmatter },
-    } = edges[0];
-    return (
-      <>
-        <Layout pageTitle="post">
-          <PostTitle>{frontmatter.title}</PostTitle>
-          <MarkDownStyle />
-          <MarkdownBlock dangerouslySetInnerHTML={{ __html: html }}></MarkdownBlock>
-        </Layout>
-      </>
-    );
-  },
-);
-
-PostTemplate.displayName = 'PostTemplate';
-
-export const queryMarkdownDataBySlug = graphql`
-  query queryMarkdownDataBySlug($slug: String) {
-    allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
-      edges {
-        node {
-          html
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`;
 const PostTitle = styled.h1`
   font-weight: 800;
   font-size: 2.5rem;
@@ -151,6 +108,50 @@ const MarkdownBlock = styled.div`
   }
   th {
     background-color: ${({ theme }) => theme.color.gray2};
+  }
+`;
+
+type PostTempalteProps = {
+  data: Data;
+};
+const PostTemplate = React.memo(
+  ({
+    data: {
+      allMarkdownRemark: { edges },
+    },
+  }: PostTempalteProps) => {
+    const {
+      node: { html, frontmatter },
+    } = edges[0];
+    return (
+      <Layout pageTitle="post">
+        <>
+          <PostTitle>{frontmatter.title}</PostTitle>
+          <MarkDownStyle />
+          <MarkdownBlock dangerouslySetInnerHTML={{ __html: html }} />
+        </>
+      </Layout>
+    );
+  },
+);
+
+PostTemplate.displayName = 'PostTemplate';
+
+export const queryMarkdownDataBySlug = graphql`
+  query queryMarkdownDataBySlug($slug: String) {
+    allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
   }
 `;
 

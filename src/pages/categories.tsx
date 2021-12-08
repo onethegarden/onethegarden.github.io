@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import React, { useMemo } from 'react';
-import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import CategoryList from '../components/Main/CategoryList';
-import { useCategory } from '../hooks/useCategory';
-import { Data } from './index';
+import useCategory from '../hooks/useCategory';
 import Layout from '../components/layout';
+import { Data } from './index';
 
-interface categoryProps {
+type categoryProps = {
   data: Data;
-}
+};
 
 function category({
   data: {

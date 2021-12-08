@@ -1,38 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import SearchIcon from '../../images/search.svg';
-
-type HeaderProps = {
-  githubProfile: string;
-  title: string;
-};
-
-function Header({ githubProfile, title }: HeaderProps) {
-  return (
-    <HeaderBlock>
-      <HeaderContainer>
-        <HeaderWrapper>
-          <ImageLink to="/about">
-            <img src={githubProfile} />
-          </ImageLink>
-          <SiteTitle>
-            <Link to="/">{title}</Link>
-          </SiteTitle>
-        </HeaderWrapper>
-        <HeaderWrapper>
-          {/* <button
-            onClick={() => {
-              console.log('button');
-            }}
-          >
-            <SearchIcon />
-          </button> */}
-        </HeaderWrapper>
-      </HeaderContainer>
-    </HeaderBlock>
-  );
-}
+// import SearchIcon from '../../images/search.svg';
 
 const HeaderBlock = styled.header`
   top: 0;
@@ -75,5 +44,35 @@ const SiteTitle = styled.div`
   margin-left: 1rem;
   transition: 0.3s;
 `;
+type HeaderProps = {
+  githubProfile: string;
+  title: string;
+};
+
+function Header({ githubProfile, title }: HeaderProps) {
+  return (
+    <HeaderBlock>
+      <HeaderContainer>
+        <HeaderWrapper>
+          <ImageLink to="/about">
+            <img src={githubProfile} alt="onethegarden_profile" />
+          </ImageLink>
+          <SiteTitle>
+            <Link to="/">{title}</Link>
+          </SiteTitle>
+        </HeaderWrapper>
+        <HeaderWrapper>
+          {/* <button
+            onClick={() => {
+              console.log('button');
+            }}
+          >
+            <SearchIcon />
+          </button> */}
+        </HeaderWrapper>
+      </HeaderContainer>
+    </HeaderBlock>
+  );
+}
 
 export default Header;

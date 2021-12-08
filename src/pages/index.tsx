@@ -1,12 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import { useLocation } from '@reach/router';
-import Layout from '../components/layout';
 import { FluidObject } from 'gatsby-image';
 import queryString, { ParsedQuery } from 'query-string';
+// eslint-disable-next-line import/no-unresolved
+import { useLocation } from '@reach/router';
+import Layout from '../components/layout';
 import PostItem from '../components/Main/PostItem';
 import Navigation from '../components/Main/Navigation';
+
+const PostUl = styled.ul`
+  margin-top: 1rem;
+  padding-left: 0;
+  display: grid;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  grid-template-columns: repeat(1, 1fr);
+`;
 
 type IndexPageProps = {
   location: {
@@ -22,7 +33,10 @@ function IndexPage({
   },
 }: IndexPageProps) {
   const parsed: ParsedQuery<string> = queryString.parse(search);
-  const selectedCategory: string = typeof parsed.category !== 'string' || !parsed.category ? 'All' : parsed.category;
+  const selectedCategory: string =
+    typeof parsed.category !== 'string' || !parsed.category
+      ? 'All'
+      : parsed.category;
   const filteredPost = edges.filter(
     ({
       node: {
@@ -30,7 +44,8 @@ function IndexPage({
       },
     }: {
       node: { frontmatter: { categories: string[] } };
-    }) => (selectedCategory !== 'All' ? categories.includes(selectedCategory) : true),
+    }) =>
+      selectedCategory !== 'All' ? categories.includes(selectedCategory) : true,
   );
 
   const location = useLocation();
@@ -61,7 +76,12 @@ export const query = graphql`
             categories
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 768, maxHeight: 200, fit: INSIDE, quality: 100) {
+                fluid(
+                  maxWidth: 768
+                  maxHeight: 200
+                  fit: INSIDE
+                  quality: 100
+                ) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
@@ -110,14 +130,5 @@ export interface Node {
     };
   };
 }
-const PostUl = styled.ul`
-  margin-top: 1rem;
-  padding-left: 0;
-  display: grid;
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  grid-template-columns: repeat(1, 1fr);
-`;
 
 export default IndexPage;

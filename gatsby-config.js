@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'onethegarden Blog',
-    siteUrl: 'https://gardenby.gatsbyjs.io/',
+    siteUrl: 'https://onethegarden.github.io/',
     author: 'onethegarden',
     description: '한정원 블로그',
   },
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: '<https://gardenby.gatsbyjs.io/>',
+        siteUrl: '<https://onethegarden.github.io/>',
         stripQueryString: true,
       },
     },
@@ -57,7 +57,6 @@ module.exports = {
     },
     {
       resolve: 'gatsby-remark-copy-linked-files',
-      options: {},
     },
     {
       resolve: 'gatsby-plugin-react-svg',
