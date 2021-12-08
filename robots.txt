@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://gardenby.gatsbyjs.io/sitemap/sitemap-index.xml
-Host: https://gardenby.gatsbyjs.io
+Sitemap: https://onethegarden.github.io/sitemap/sitemap-index.xml
+Host: https://onethegarden.github.io
