@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-categories-tsx",
     "path": "/categories/",
-    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"categories":["React"]}}},{"node":{"frontmatter":{"categories":["javascript"]}}},{"node":{"frontmatter":{"categories":["javascript"]}}},{"node":{"frontmatter":{"categories":["API"]}}},{"node":{"frontmatter":{"categories":["centOS"]}}},{"node":{"frontmatter":{"categories":["Review"]}}},{"node":{"frontmatter":{"categories":["Git"]}}},{"node":{"frontmatter":{"categories":["React"]}}},{"node":{"frontmatter":{"categories":["React"]}}}]}},"pageContext":{}},
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"categories":["Next"]}}},{"node":{"frontmatter":{"categories":["React"]}}},{"node":{"frontmatter":{"categories":["javascript"]}}},{"node":{"frontmatter":{"categories":["javascript"]}}},{"node":{"frontmatter":{"categories":["API"]}}},{"node":{"frontmatter":{"categories":["centOS"]}}},{"node":{"frontmatter":{"categories":["Review"]}}},{"node":{"frontmatter":{"categories":["Git"]}}},{"node":{"frontmatter":{"categories":["React"]}}},{"node":{"frontmatter":{"categories":["React"]}}}]}},"pageContext":{}},
     "staticQueryHashes": ["290286666"]}
