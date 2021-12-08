@@ -48,7 +48,7 @@ Next.js는 Dynamic Routes 가 있는 페이지를 지원합니다. 예를들어
 
 우리는 성능상의 이유로 서버 측 렌더링을 통해 `Static Generation` 를 사용하는 것을 권장합니다. 정적으로 생성된 페이지는 성능 향상을 위한 추가 설정 없이 CDN에서 캐시 처리 할 수 있습니다. 그러나 어떤 경우에는 서버 측 렌더링이 유일한 옵션일 수 있습니다.
 
- `Static Generation` 또는 `Server-side Rendering` 과 함께 **`Client-side Rendering`**을 사용할 수도 있습니다 . 즉, 페이지의 일부는 클라이언트 측 JavaScript로 완전히 렌더링될 수 있습니다. 자세한 내용은 [데이터 가져오기](https://nextjs.org/docs/basic-features/data-fetching#fetching-data-on-the-client-side) 문서를 참조하세요.
+ `Static Generation` 또는 `Server-side Rendering` 과 함께 `Client-side Rendering`을 사용할 수도 있습니다 . 즉, 페이지의 일부는 클라이언트 측 JavaScript로 완전히 렌더링될 수 있습니다. 자세한 내용은 [데이터 가져오기](https://nextjs.org/docs/basic-features/data-fetching#fetching-data-on-the-client-side) 문서를 참조하세요.
 
 ## Static Generation(권장)
 
