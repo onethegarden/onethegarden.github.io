@@ -2,26 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
-type NavigationProps = {
-  pathname: string;
-};
-
-function Navigation({ pathname }: NavigationProps) {
-  const menus = [
-    { name: 'posts', link: '/' },
-    { name: 'categories', link: '/categories' },
-  ];
-  return (
-    <NavigationBlock>
-      {menus.map(menu => (
-        <ToggleLink key={menu.name} to={`${menu.link}`} isActive={pathname === menu.link}>
-          {menu.name}
-        </ToggleLink>
-      ))}
-    </NavigationBlock>
-  );
-}
-
 const NavigationBlock = styled.nav`
   border-bottom: solid 1px ${({ theme }) => theme.color.gray2};
   line-height: 30px;
@@ -46,4 +26,29 @@ const ToggleLink = styled(Link)<{ isActive: boolean }>`
       color: ${({ theme }) => theme.color.blue4};
     `}
 `;
+
+type NavigationProps = {
+  pathname: string;
+};
+
+function Navigation({ pathname }: NavigationProps) {
+  const menus = [
+    { name: 'posts', link: '/' },
+    { name: 'categories', link: '/categories' },
+  ];
+  return (
+    <NavigationBlock>
+      {menus.map((menu) => (
+        <ToggleLink
+          key={menu.name}
+          to={`${menu.link}`}
+          isActive={pathname === menu.link}
+        >
+          {menu.name}
+        </ToggleLink>
+      ))}
+    </NavigationBlock>
+  );
+}
+
 export default Navigation;

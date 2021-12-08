@@ -10,13 +10,13 @@ title: CentOS에서 Nginx로 REACT배포
 
 1. yum repository에 nodeSource 추가
 
-   ```shell
+   ```
    curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
    ```
 
 2. intall node.js
 
-   ```shell
+   ```
    sudo yum install nodejs
    ```
 
@@ -24,13 +24,13 @@ title: CentOS에서 Nginx로 REACT배포
 
 1. 외부 저장소 추가
 
-   ```shell
+   ```
    vi /etc/yum.repos.d/nginx.repo
    ```
 
    저거 열고 이거 붙여넣기, centos/7 이부분은 os/version
 
-   ```shell
+   ```
    [nginx]
    name=nginx repo
    baseurl=http://nginx.org/packages/centos/7/$basearch/
@@ -40,36 +40,36 @@ title: CentOS에서 Nginx로 REACT배포
 
 2. 방화벽 포트 개방, 8080 열어줌
 
-   ```shell
+   ```
    firewall-cmd --permanent --zone=public --add-port=8080/tcp
    ```
 
    리로드
 
-   ```shell
+   ```
    firewall-cmd --reload
    ```
 
    열린 포트 리스트 확인
 
-   ```shell
+   ```
    firewall-cmd --list-ports
    ```
 
    (Firewall 없을 경우 설치, 사용하게 허용)
 
-   ```shell
+   ```
    sudo yum install firewalld
    sudo systemctl enable firewalld
    ```
 
 3. Nginx 포트 설정 /etc/nginx/conf.d/default.conf
 
-```shell
+```
 sudo vi /etc/nginx/conf.d/default.conf
 ```
 
-```shell
+```
 server {
     listen       8080;
     server_name  localhost;
@@ -117,7 +117,7 @@ server {
 
 4. Nginx 시작
 
-   ```shell
+   ```
    systemctl start nginx
    systemctl enable nginx
    ```
@@ -128,11 +128,11 @@ server {
 
 파일 열어서 location 수정
 
-```shell
+```
 sudo vi /etc/nginx/conf.d/default.conf
 ```
 
-```shell
+```
 server {
     listen       8080;
     server_name  localhost;
@@ -150,7 +150,7 @@ server {
 
 /home/onethegarden/ 에 권한이 없어서 생기는 일
 
-```shell
+```
 sudo chmod 755 /home/onethegarden
 ```
 

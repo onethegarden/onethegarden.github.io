@@ -1,6 +1,8 @@
-import { Edge } from "../pages/index";
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
+import { Edge } from '../pages/index';
 
-export const useCategory = (edges: Edge[]) =>
+const useCategory = (edges: Edge[]) =>
   edges.reduce(
     (
       list: { [key: string]: number },
@@ -8,16 +10,18 @@ export const useCategory = (edges: Edge[]) =>
         node: {
           frontmatter: { categories },
         },
-      }: { node: { frontmatter: { categories: string[] } } }
+      }: { node: { frontmatter: { categories: string[] } } },
     ) => {
       categories.forEach((category) => {
         if (list[category] === undefined) list[category] = 1;
         else list[category]++;
       });
 
-      list["All"]++;
+      list.All++;
 
       return list;
     },
-    { All: 0 }
+    { All: 0 },
   );
+
+export default useCategory;
