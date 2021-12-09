@@ -18,9 +18,7 @@ pre {
 code,
 pre {
   tab-size: 2;
-  font-family: Fira Code, Consolas, Monaco, Andale Mono, Ubuntu Mono,
-    monospace;
-    font-weight: 400;
+  font-size: 0.8rem;
 }
 `;
 
