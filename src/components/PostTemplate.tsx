@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import 'gatsby-remark-vscode/styles.css';
+
+import '../lib/styles/code.css';
 
 import Layout from './layout';
-import MarkDownStyle from './common/MarkdownStyle';
 import { Data } from '../pages/index';
 
 const PostTitle = styled.h1`
@@ -75,11 +75,8 @@ const MarkdownBlock = styled.div`
   }
 
   a {
-    color: ${({ theme }) => theme.color.blue4};
+    color: ${({ theme }) => theme.color.gray4};
     text-decoration: underline;
-    &:hover {
-      color: ${({ theme }) => theme.color.blue4};
-    }
   }
 
   img {
@@ -119,7 +116,6 @@ const PostTemplate = React.memo(
       <Layout pageTitle="post">
         <>
           <PostTitle>{frontmatter.title}</PostTitle>
-          <MarkDownStyle />
           <MarkdownBlock dangerouslySetInnerHTML={{ __html: html }} />
         </>
       </Layout>

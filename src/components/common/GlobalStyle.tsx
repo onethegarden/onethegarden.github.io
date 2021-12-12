@@ -6,18 +6,19 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
-
   html,
   body,
   #___gatsby {
     height: 100%;
   }
   html{
-    font: 100%/1.625 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   }
   body{
+    font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;
+    font-feature-settings:"kern", "liga", "clig", "calt";
   }
   a,
   a:hover {
