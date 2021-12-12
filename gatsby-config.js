@@ -44,14 +44,19 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-vscode`,
+            resolve: `gatsby-remark-images`,
             options: {
-              theme: {
-                default: 'Solarized Light',
-                dark: 'Monokai Dimmed',
-              },
+              maxWidth: 1200,
+              linkImagesToOriginal: false,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: '%',
+            },
+          },
+          `gatsby-remark-emoji`,
         ],
       },
     },

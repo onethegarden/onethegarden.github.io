@@ -137,7 +137,7 @@ Next.js는 **dynamic routes**로 페이지를 만들 수 있습니다. 예를들
 
 나중에, `id:2` 로 된 두 번째 포스트를 추가합니다. 그러면  `posts/2` 도 pre-render 되기를 원할 것이죠.
 
-따라서 pre-render 되는 페이지 **경로**는 외부 데이터에 따라 달라집니다**.** 이를 처리하기 위해 Next.js 는 dynamic page(이번 경우에는 `pages/posts/[id].js` )에서 `getStaticPaths` 라는 `async`함수를 `export` 하여 사용할 수 있게 합니다. 이 함수는 빌드 시에 호출되고 pre-redner 할 path를 정할 수 있습니다.
+따라서 pre-render 되는 페이지 **경로**는 외부 데이터에 따라 달라집니다. 이를 처리하기 위해 Next.js 는 dynamic page(이번 경우에는 `pages/posts/[id].js` )에서 `getStaticPaths` 라는 `async`함수를 `export` 하여 사용할 수 있게 합니다. 이 함수는 빌드 시에 호출되고 pre-redner 할 path를 정할 수 있습니다.
 
 ```jsx
 // 이 함수는 빌드 시에 호출됩니다.
@@ -242,5 +242,5 @@ export default Page
 
 우리는 Next.js의 두 가지 형태의 pre-rendering에 대해 알아봤습니다.
 
-- Static Generation**(권장):** HTML은 빌드 시 생성되고 각 요청에서 재사용됩니다. Static Generation을 사용해서 page를 만들려면 page component를 export 하거나 `getStaticProps` (필요한 경우 `getStaticPaths` 도)를 export 합니다. 사용자의 요청에 앞서 미리 렌더링할 수 있는 페이지에 적합합니다. 또한, Client-side-Rendering 과 함께 사용하여 추가적인 데이터도 가지고 올 수 있습니다.
+- Static Generation(**권장**): HTML은 빌드 시 생성되고 각 요청에서 재사용됩니다. Static Generation을 사용해서 page를 만들려면 page component를 export 하거나 `getStaticProps` (필요한 경우 `getStaticPaths` 도)를 export 합니다. 사용자의 요청에 앞서 미리 렌더링할 수 있는 페이지에 적합합니다. 또한, Client-side-Rendering 과 함께 사용하여 추가적인 데이터도 가지고 올 수 있습니다.
 - **Server-side Rendering: 각 요청마다** HTML이 생성됩니다. page를 Server-side Rendering으로 만들고 싶으면 `getServerSideProps` 를 export 하면 됩니다. Server-side Rendering 은 Static Generation에 비해 느리기 때문에, 반드시 필요한 경우에만 사용해야 합니다.
