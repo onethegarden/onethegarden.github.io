@@ -3,18 +3,15 @@ import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import CategoryList from '../components/Main/CategoryList';
 import useCategory from '../hooks/useCategory';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { Data } from './index';
 
 type categoryProps = {
   data: Data;
 };
 
-function category({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}: categoryProps) {
+function category({ data }: categoryProps) {
+  const { edges } = data.allMarkdownRemark;
   const categoryList = useMemo(() => useCategory(edges), []);
   return (
     <Layout pageTitle="Blog">
@@ -25,7 +22,10 @@ function category({
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: fields___slug, order: DESC }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { layout: { ne: "about" } } }
+      sort: { fields: fields___slug, order: DESC }
+    ) {
       edges {
         node {
           frontmatter {
