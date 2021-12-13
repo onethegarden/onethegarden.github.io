@@ -1,31 +1,43 @@
 import * as React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
+import { Data } from './index';
+import MarkdownBlock from '../components/MarkdownBlock/MarkdownBlock';
 
 const AboutInfo = styled.main`
   width: 100%;
   margin: 80px 0;
 `;
 
-const AboutTitle = styled.h1`
-  border-left: 3px solid red;
-  padding-left: 20px;
-`;
+type AboutPageProps = {
+  data: Data;
+};
 
-const AboutContents = styled.article`
-  margin: 100px 20px;
-`;
-
-const AboutPage: React.FC = () => {
+const AboutPage = ({ data }: AboutPageProps) => {
+  const { edges } = data.allMarkdownRemark;
+  const about = edges.map(({ node }) => node)[0];
   return (
     <Layout pageTitle="About Page">
       <AboutInfo>
-        <AboutTitle>한정원</AboutTitle>
-        <AboutContents>
-          <p>🙋‍♀️한정원 블로그 입니다</p>
-        </AboutContents>
+        <MarkdownBlock htmlText={about.html} />
       </AboutInfo>
     </Layout>
   );
 };
+export const query = graphql`
+  query {
+    allMarkdownRemark(filter: { frontmatter: { layout: { eq: "about" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            categories
+          }
+          html
+        }
+      }
+    }
+  }
+`;
 export default AboutPage;

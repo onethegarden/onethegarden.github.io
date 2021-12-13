@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import LayoutTemplate from '../components/layout';
+import LayoutTemplate from '../components/Layout';
 
 const ToMain = styled(Link)`
   font-size: 1.2rem;

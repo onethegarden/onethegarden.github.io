@@ -5,7 +5,7 @@ import { FluidObject } from 'gatsby-image';
 import queryString, { ParsedQuery } from 'query-string';
 // eslint-disable-next-line import/no-unresolved
 import { useLocation } from '@reach/router';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import PostItem from '../components/Main/PostItem';
 import Navigation from '../components/Main/Navigation';
 
@@ -37,15 +37,11 @@ function IndexPage({
     typeof parsed.category !== 'string' || !parsed.category
       ? 'All'
       : parsed.category;
-  const filteredPost = edges.filter(
-    ({
-      node: {
-        frontmatter: { categories },
-      },
-    }: {
-      node: { frontmatter: { categories: string[] } };
-    }) =>
-      selectedCategory !== 'All' ? categories.includes(selectedCategory) : true,
+
+  const filteredPost = edges.filter(({ node }: { node: Node }) =>
+    selectedCategory !== 'All'
+      ? node.frontmatter.categories.includes(selectedCategory)
+      : true,
   );
 
   const location = useLocation();
@@ -65,27 +61,19 @@ function IndexPage({
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: fields___slug, order: DESC }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { layout: { ne: "about" } } }
+      sort: { fields: fields___slug, order: DESC }
+    ) {
       edges {
         node {
           fields {
             slug
           }
           frontmatter {
+            layout
             title
             categories
-            thumbnail {
-              childImageSharp {
-                fluid(
-                  maxWidth: 768
-                  maxHeight: 200
-                  fit: INSIDE
-                  quality: 100
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
           }
           parent {
             ... on File {
@@ -121,6 +109,7 @@ export interface Node {
   };
   id: string;
   frontmatter: {
+    layout: string;
     title: string;
     categories: string[];
     thumbnail: {

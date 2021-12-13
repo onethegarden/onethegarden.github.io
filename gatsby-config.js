@@ -6,19 +6,6 @@ module.exports = {
     description: '한정원 블로그',
   },
   plugins: [
-    'gatsby-plugin-gatsby-cloud',
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-image',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
@@ -30,7 +17,20 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: `blog`,
-        path: `${__dirname}/src/blog`,
+        path: `${__dirname}/src/contents/blog`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `about`,
+        path: `${__dirname}/src/contents/__about`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {
@@ -71,5 +71,12 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
   ],
 };
