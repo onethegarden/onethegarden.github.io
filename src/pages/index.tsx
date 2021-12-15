@@ -12,11 +12,6 @@ import Navigation from '../components/Main/Navigation';
 const PostUl = styled.ul`
   margin-top: 1rem;
   padding-left: 0;
-  display: grid;
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  grid-template-columns: repeat(1, 1fr);
 `;
 
 type IndexPageProps = {
@@ -70,6 +65,10 @@ export const query = graphql`
           fields {
             slug
           }
+          excerpt(pruneLength: 180, truncate: true)
+          fields {
+            slug
+          }
           frontmatter {
             layout
             title
@@ -101,6 +100,7 @@ export interface Edge {
 }
 export interface Node {
   html: string;
+  excerpt: string;
   fields: {
     slug: string;
   };
