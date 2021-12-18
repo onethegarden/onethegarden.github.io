@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import CategoryList from '../components/Main/CategoryList';
 import useCategory from '../hooks/useCategory';
-import Layout from '../components/layout_fix';
+import Layout from '../components/Layout';
 import { Data } from './index';
 
 type categoryProps = {
