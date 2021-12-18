@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/layout_fix';
 import { Data } from './index';
 import MarkdownBlock from '../components/MarkdownBlock/MarkdownBlock';
 

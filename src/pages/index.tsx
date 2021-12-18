@@ -5,7 +5,7 @@ import { FluidObject } from 'gatsby-image';
 import queryString, { ParsedQuery } from 'query-string';
 // eslint-disable-next-line import/no-unresolved
 import { useLocation } from '@reach/router';
-import Layout from '../components/Layout';
+import Layout from '../components/layout_fix';
 import PostItem from '../components/Main/PostItem';
 import Navigation from '../components/Main/Navigation';
 

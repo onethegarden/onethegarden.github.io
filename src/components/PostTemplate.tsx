@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 
 import '../lib/styles/code.css';
 
-import Layout from './Layout';
+import Layout from './layout_fix';
 import { Data } from '../pages/index';
 import MarkdownBlock from './MarkdownBlock/MarkdownBlock';
 
