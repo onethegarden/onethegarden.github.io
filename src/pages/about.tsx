@@ -3,11 +3,10 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import { Data } from './index';
-import MarkdownBlock from '../components/MarkdownBlock/MarkdownBlock';
+import MarkdownBlock from '../components/MarkdownBlock/AboutMarkdownBlock';
 
 const AboutInfo = styled.main`
   width: 100%;
-  margin: 80px 0;
 `;
 
 type AboutPageProps = {

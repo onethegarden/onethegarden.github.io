@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 type MarkdownBlockProps = {
   htmlText: string;
+  /** styled-components className 상속받을 때 사용 */
+  className?: string;
 };
 
 const Markdown = styled.div`
@@ -91,8 +93,17 @@ const Markdown = styled.div`
   }
 `;
 
-function MarkdownBlock({ htmlText }: MarkdownBlockProps) {
-  return <Markdown dangerouslySetInnerHTML={{ __html: htmlText }} />;
+function MarkdownBlock({ htmlText, className }: MarkdownBlockProps) {
+  return (
+    <Markdown
+      dangerouslySetInnerHTML={{ __html: htmlText }}
+      className={className}
+    />
+  );
 }
+
+MarkdownBlock.defaultProps = {
+  className: '',
+};
 
 export default MarkdownBlock;
