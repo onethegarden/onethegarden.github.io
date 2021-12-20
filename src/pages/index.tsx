@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import { FluidObject } from 'gatsby-image';
 import queryString, { ParsedQuery } from 'query-string';
 // eslint-disable-next-line import/no-unresolved
 import { useLocation } from '@reach/router';
+import { Data, Node, Edge } from '../models/blog';
 import Layout from '../components/Layout';
 import PostItem from '../components/Main/PostItem';
 import Navigation from '../components/Main/Navigation';
@@ -84,40 +84,5 @@ export const query = graphql`
     }
   }
 `;
-
-export interface Result {
-  data: Data;
-}
-
-export interface Data {
-  allMarkdownRemark: {
-    edges: Edge[];
-  };
-}
-
-export interface Edge {
-  node: Node;
-}
-export interface Node {
-  html: string;
-  excerpt: string;
-  fields: {
-    slug: string;
-  };
-  parent: {
-    modifiedTime: string;
-  };
-  id: string;
-  frontmatter: {
-    layout: string;
-    title: string;
-    categories: string[];
-    thumbnail: {
-      childImageSharp: {
-        fluid: FluidObject | FluidObject[];
-      };
-    };
-  };
-}
 
 export default IndexPage;

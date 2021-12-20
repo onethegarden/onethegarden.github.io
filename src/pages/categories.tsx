@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import CategoryList from '../components/Main/CategoryList';
 import useCategory from '../hooks/useCategory';
 import Layout from '../components/Layout';
-import { Data } from './index';
+import { Data } from '../models/blog';
 
 type categoryProps = {
   data: Data;

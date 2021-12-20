@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import '../lib/styles/code.css';
 
 import Layout from './Layout';
-import { Data } from '../pages/index';
+import { Data } from '../models/blog';
 import MarkdownBlock from './MarkdownBlock/MarkdownBlock';
 
 const PostTitle = styled.h1`
@@ -15,29 +15,24 @@ const PostTitle = styled.h1`
   margin-top: 0.75rem;
   border-bottom: 0.8px solid #afafaf;
 `;
+
 type PostTempalteProps = {
   data: Data;
 };
-const PostTemplate = React.memo(
-  ({
-    data: {
-      allMarkdownRemark: { edges },
-    },
-  }: PostTempalteProps) => {
-    const {
-      node: { html, frontmatter },
-    } = edges[0];
-    return (
-      <Layout pageTitle="post">
-        <>
-          <PostTitle>{frontmatter.title}</PostTitle>
-          <MarkdownBlock htmlText={html} />
-        </>
-      </Layout>
-    );
-  },
-);
-
+function PostTemplate({ data }: PostTempalteProps) {
+  const {
+    node: { html, frontmatter, tableOfContents },
+  } = data.allMarkdownRemark.edges[0];
+  return (
+    <Layout pageTitle="post">
+      <>
+        <PostTitle>{frontmatter.title}</PostTitle>
+        <MarkdownBlock htmlText={tableOfContents} />
+        <MarkdownBlock htmlText={html} />
+      </>
+    </Layout>
+  );
+}
 PostTemplate.displayName = 'PostTemplate';
 
 export const queryMarkdownDataBySlug = graphql`
@@ -52,6 +47,7 @@ export const queryMarkdownDataBySlug = graphql`
           fields {
             slug
           }
+          tableOfContents
         }
       }
     }
