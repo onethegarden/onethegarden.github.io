@@ -56,6 +56,15 @@ module.exports = {
               inlineCodeMarker: '%',
             },
           },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `anchor-header`,
+              maintainCase: false, // url 대소문자 구분 false
+              removeAccents: true,
+              elements: [`h2`, 'h3', `h4`],
+            },
+          },
           `gatsby-remark-emoji`,
         ],
       },

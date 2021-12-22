@@ -13,11 +13,20 @@ type LayoutType = {
 };
 
 const Container = styled.main`
-  padding: 2rem;
-  padding: 1.2rem;
-  margin: auto;
-  margin-top: 3rem;
-  max-width: 800px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @media (min-width: 600px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (min-width: 1280px) {
+    max-width: 1200px;
+  }
 `;
 
 const Contents = styled.section`

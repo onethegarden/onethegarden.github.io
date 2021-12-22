@@ -2,7 +2,7 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import { Data } from './index';
+import { Data } from '../models/blog';
 import MarkdownBlock from '../components/MarkdownBlock/AboutMarkdownBlock';
 
 const AboutInfo = styled.main`
