@@ -1,0 +1,204 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.bb35eda59d730facb612.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;color:#073642;font-family:SFMono-Regular,Menlo,Consolas,PT Mono,Liberation Mono,Courier,monospace;font-size:.95em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#073642}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#87837826;color:#0086b7}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#690}.token.entity{background:#efede4;color:#657b83}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><meta name="generator" content="Gatsby 3.14.6"/><link rel="canonical" href="null//null%3Chttps://onethegarden.github.io/%3E/2021-12-30-jsp-vs-nextjs/"/><style type="text/css">
+    .anchor-header.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor-header.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor-header svg,
+    h2 .anchor-header svg,
+    h3 .anchor-header svg,
+    h4 .anchor-header svg,
+    h5 .anchor-header svg,
+    h6 .anchor-header svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor-header svg,
+    h2:hover .anchor-header svg,
+    h3:hover .anchor-header svg,
+    h4:hover .anchor-header svg,
+    h5:hover .anchor-header svg,
+    h6:hover .anchor-header svg,
+    h1 .anchor-header:focus svg,
+    h2 .anchor-header:focus svg,
+    h3 .anchor-header:focus svg,
+    h4 .anchor-header:focus svg,
+    h5 .anchor-header:focus svg,
+    h6 .anchor-header:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.3.3">*{padding:0;margin:0;box-sizing:border-box;}/*!sc*/
+html,body,#___gatsby{height:100%;}/*!sc*/
+html{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";}/*!sc*/
+body{font-weight:normal;word-wrap:break-word;font-kerning:normal;font-feature-settings:"kern","liga","clig","calt";}/*!sc*/
+a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}/*!sc*/
+button{padding:0;cursor:pointer;outline:none;border:0 none;background-color:transparent;}/*!sc*/
+input{outline:none;}/*!sc*/
+data-styled.g1[id="sc-global-eSrYPA1"]{content:"sc-global-eSrYPA1,"}/*!sc*/
+.bfSYmC{top:0;left:50%;width:100%;height:3rem;z-index:300;position:fixed;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);background-color:#f7f7f7d9;}/*!sc*/
+data-styled.g2[id="Header__HeaderBlock-sc-rsuad7-0"]{content:"bfSYmC,"}/*!sc*/
+.gmMaPk{position:relative;height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;margin:0 4rem;}/*!sc*/
+data-styled.g3[id="Header__HeaderContainer-sc-rsuad7-1"]{content:"gmMaPk,"}/*!sc*/
+.iAxQHO img{width:2.4rem;height:2.4rem;border-radius:1.2rem;margin-top:0.3rem;}/*!sc*/
+data-styled.g4[id="Header__ImageLink-sc-rsuad7-2"]{content:"iAxQHO,"}/*!sc*/
+.bZRvQV{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+data-styled.g5[id="Header__HeaderWrapper-sc-rsuad7-3"]{content:"bZRvQV,"}/*!sc*/
+.kQOupD{font-size:1.2rem;font-weight:700;margin-left:1rem;-webkit-transition:0.3s;transition:0.3s;}/*!sc*/
+.kQOupD a{color:#000;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g6[id="Header__SiteTitle-sc-rsuad7-4"]{content:"kQOupD,"}/*!sc*/
+.jtrwTt{width:100%;display:block;box-sizing:border-box;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem;}/*!sc*/
+@media (min-width:600px){.jtrwTt{padding-left:2rem;padding-right:2rem;}}/*!sc*/
+@media (min-width:1280px){.jtrwTt{max-width:1200px;}}/*!sc*/
+data-styled.g7[id="Layout__Container-sc-o4gcb5-0"]{content:"jtrwTt,"}/*!sc*/
+.lfaSyy{margin-top:4rem;padding:1rem;}/*!sc*/
+data-styled.g8[id="Layout__Contents-sc-o4gcb5-1"]{content:"lfaSyy,"}/*!sc*/
+.dcZCwv{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin:0 auto;padding:3rem 0;word-break:break-all;line-height:1.8;font-size:16px;font-weight:400;}/*!sc*/
+.dcZCwv h1,.dcZCwv h2,.dcZCwv h3{margin:2rem 0 1rem 0;font-weight:600;}/*!sc*/
+.dcZCwv h1{font-size:3rem;font-weight:700;line-height:1.35;margin-top:0.75rem;}/*!sc*/
+.dcZCwv h2{font-size:2rem;line-height:1.5;}/*!sc*/
+.dcZCwv h3{font-size:1.5rem;line-height:1.6;margin-bottom:0;}/*!sc*/
+.dcZCwv p{padding-left:0;padding-right:0;padding-top:0;line-height:1.6rem;margin:0.4rem 0;}/*!sc*/
+.dcZCwv blockquote{margin:1rem 0;padding:1rem 1.2rem;border-left:5px solid #525b61;background-color:#ededed;}/*!sc*/
+.dcZCwv blockquote pre{margin:1rem 0;}/*!sc*/
+.dcZCwv ol,.dcZCwv ul{margin:1rem 0;margin-left:2rem;}/*!sc*/
+.dcZCwv hr{border:1px solid #000;margin:100px 0;}/*!sc*/
+.dcZCwv a{color:#656e75;-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.dcZCwv img{max-width:100%;box-sizing:border-box;padding:1rem;}/*!sc*/
+.dcZCwv table{margin:0.5rem 0;}/*!sc*/
+.dcZCwv table,.dcZCwv th,.dcZCwv td{border-collapse:collapse;border:1px solid #757575;padding:0.2rem 0.4rem;font-size:0.9rem;}/*!sc*/
+.dcZCwv th{background-color:#ededed;}/*!sc*/
+data-styled.g9[id="MarkdownBlock__Markdown-sc-1nquq7j-0"]{content:"dcZCwv,"}/*!sc*/
+.SNHTV{top:5rem;position:-webkit-sticky;position:sticky;-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;word-break:break-all;padding:1.2rem;margin-left:1rem;}/*!sc*/
+.SNHTV li{color:#656e75;font-size:0.9rem;word-break:break-all;list-style:none;font-weight:400;line-height:1.4;margin:0.4rem 0;}/*!sc*/
+.SNHTV li ul{margin:0rem 0 1rem 1rem;border-left:1px solid #eeeeee;}/*!sc*/
+.SNHTV li ul a{display:block;font-size:0.8rem;margin-left:0.4rem;border-radius:0.4rem;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+@media (min-width:0px){.SNHTV{display:none;}}/*!sc*/
+@media (min-width:1280px){.SNHTV{display:block;}}/*!sc*/
+data-styled.g10[id="TableOfContents__TableOfContentsBlock-sc-1pewf3q-0"]{content:"SNHTV,"}/*!sc*/
+.fkIqYf{font-size:3rem;font-weight:700;line-height:1.35;margin-top:0.75rem;border-bottom:0.8px solid #afafaf;}/*!sc*/
+data-styled.g11[id="PostTemplate__PostTitle-sc-1uv7i7c-0"]{content:"fkIqYf,"}/*!sc*/
+.kYwQXS{margin-top:3rem;}/*!sc*/
+@media (min-width:1280px){.kYwQXS{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}/*!sc*/
+data-styled.g12[id="PostTemplate__PostWrapper-sc-1uv7i7c-1"]{content:"kYwQXS,"}/*!sc*/
+@media (min-width:1280px){.gWDCMN{-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:70%;-webkit-flex-basis:70%;-ms-flex-preferred-size:70%;flex-basis:70%;}}/*!sc*/
+data-styled.g13[id="PostTemplate__PostContents-sc-1uv7i7c-2"]{content:"gWDCMN,"}/*!sc*/
+</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><title data-react-helmet="true">post | onethegarden Blog</title><link data-react-helmet="true" href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAA//9A/wGve/8Ip3T1EQAAAAAAAAD/AAAAAQAAAP8AAAAWAAAA/wAAAACZc+kRn2/rCQAAAP8AAAAAAAAAAAAAAP+SZ+0Kn3LtUZ5y7qgAAAAAAAAAAAAAAB4AAABGAAAATwAAABoAAAAAoHPuoaBw71kAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAMAAAAFwAAABsAAAAJAAAAAAAAAP8AAAAAAAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/><link data-react-helmet="true" rel="icon" href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAA//9A/wGve/8Ip3T1EQAAAAAAAAD/AAAAAQAAAP8AAAAWAAAA/wAAAACZc+kRn2/rCQAAAP8AAAAAAAAAAAAAAP+SZ+0Kn3LtUZ5y7qgAAAAAAAAAAAAAAB4AAABGAAAATwAAABoAAAAAoHPuoaBw71kAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAMAAAAFwAAABsAAAAJAAAAAAAAAP8AAAAAAAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/><meta data-react-helmet="true" name="description" content="한정원 블로그"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" charSet="utf-8"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="onethegarden Blog"/><meta data-react-helmet="true" property="og:description" content="한정원 블로그"/><meta data-react-helmet="true" property="og:image" content="https://avatars1.githubusercontent.com/u/51187540?s=460&amp;v=4"/><meta data-react-helmet="true" property="og:url" content="https://onethegarden.github.io"/><meta data-react-helmet="true" property="og:site_name" content="onethegarden Blog"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="onethegarden Blog"/><meta data-react-helmet="true" name="twitter:description" content="한정원 블로그"/><meta data-react-helmet="true" name="twitter:image" content="https://avatars1.githubusercontent.com/u/51187540?s=460&amp;v=4"/><meta data-react-helmet="true" name="twitter:site" content="onethegarden"/><meta data-react-helmet="true" name="twitter:creator" content="onethegarden"/><link as="script" rel="preload" href="/webpack-runtime-4ed4a88971e0b321aa3b.js"/><link as="script" rel="preload" href="/framework-27f7b01b639722126502.js"/><link as="script" rel="preload" href="/app-22a5de554f2225475e6f.js"/><link as="script" rel="preload" href="/commons-568f831de2071dee71ad.js"/><link as="script" rel="preload" href="/component---src-components-post-template-tsx-dcd3dcc35d5ef95c6398.js"/><link as="fetch" rel="preload" href="/page-data/2021-12-30-jsp-vs-nextjs/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/290286666.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><main class="Layout__Container-sc-o4gcb5-0 jtrwTt"><header class="Header__HeaderBlock-sc-rsuad7-0 bfSYmC"><div class="Header__HeaderContainer-sc-rsuad7-1 gmMaPk"><div class="Header__HeaderWrapper-sc-rsuad7-3 bZRvQV"><a class="Header__ImageLink-sc-rsuad7-2 iAxQHO" href="/about"><img src="https://avatars1.githubusercontent.com/u/51187540?s=460&amp;v=4" alt="onethegarden_profile"/></a><div class="Header__SiteTitle-sc-rsuad7-4 kQOupD"><a href="/">onethegarden Blog</a></div></div><div class="Header__HeaderWrapper-sc-rsuad7-3 bZRvQV"></div></div></header><section class="Layout__Contents-sc-o4gcb5-1 lfaSyy"><div class="PostTemplate__PostWrapper-sc-1uv7i7c-1 kYwQXS"><div class="PostTemplate__PostContents-sc-1uv7i7c-2 gWDCMN"><h1 class="PostTemplate__PostTitle-sc-1uv7i7c-0 fkIqYf">SSR...? jsp...? next.js? 뭐가 다른데?</h1><div class="MarkdownBlock__Markdown-sc-1nquq7j-0 dcZCwv"><blockquote>
+<p>참고 문서 : <a href="https://medium.com/swlh/the-hitchhikers-guide-to-next-js-fd7aa14ae8d0">next js 히치하이커를 위한 안내서</a></p>
+</blockquote>
+<p>"next.js 히치하이커를 위한 안내서" 라는 글엔 웹개발의 역사를 설명하면서 <code class="language-text">next.js</code>가 탄생하게 된 이유를 설명해준다.</p>
+<p>그 중에서 궁금했던 내용인 <code class="language-text">jsp</code> 와 <code class="language-text">next.js</code> 의 차이점에 대한 이유를 정리해 보려고 한다.</p>
+<p>먼저, 웹이 변화해 왔던 흐름을 이해하는 게 중요하다. 대부분의 변화는 문제를 해결하려고 한 데서 출발하기 때문이다.</p>
+<h2 id="웹이-변화해-왔던-흐름을-간단히-요약하자면" style="position:relative;"><a href="#%EC%9B%B9%EC%9D%B4-%EB%B3%80%ED%99%94%ED%95%B4-%EC%99%94%EB%8D%98-%ED%9D%90%EB%A6%84%EC%9D%84-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%9A%94%EC%95%BD%ED%95%98%EC%9E%90%EB%A9%B4" aria-label="웹이 변화해 왔던 흐름을 간단히 요약하자면 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹이 변화해 왔던 흐름을 간단히 요약하자면,</h2>
+<h3 id="1-동적인-웹페이지를-위한-jsp-php-asp" style="position:relative;"><a href="#1-%EB%8F%99%EC%A0%81%EC%9D%B8-%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A5%BC-%EC%9C%84%ED%95%9C-jsp-php-asp" aria-label="1 동적인 웹페이지를 위한 jsp php asp permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 동적인 웹페이지를 위한 JSP, PHP, ASP...</h3>
+<ul>
+<li>서버가 요청에 대한 HTML 을 만들어 내 반환</li>
+<li>일부는 HTML로, 동적이게 보여줘야 하는 부분은 JSP 문법으로 작성할 수 있었음</li>
+<li>요청이 많아질수록 페이지가 로드 되는 시간이 길어짐</li>
+</ul>
+<h3 id="2-javascript-와-ajax가-더-복잡한-웹을-만듦" style="position:relative;"><a href="#2-javascript-%EC%99%80-ajax%EA%B0%80-%EB%8D%94-%EB%B3%B5%EC%9E%A1%ED%95%9C-%EC%9B%B9%EC%9D%84-%EB%A7%8C%EB%93%A6" aria-label="2 javascript 와 ajax가 더 복잡한 웹을 만듦 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. javascript 와 ajax가 더 복잡한 웹을 만듦</h3>
+<ul>
+<li><code class="language-text">JavaScript</code> 덕분에 더 상호작용이 많은 웹 페이지가 보편화 됨</li>
+<li><code class="language-text">ajax</code> 를 통해서 화면 깜빡임(reload) 없이 새로운 데이터를 거의 즉시 업데이트 할 수 있게 됨.</li>
+<li>이 때 웹 개발자는 <code class="language-text">jsp</code>, <code class="language-text">javascript</code>, <code class="language-text">css</code> , <code class="language-text">html</code> 이 모두 함께 잘 동작하는지 확인해야 했음</li>
+</ul>
+<h3 id="3--개발자에게-좋은-client-side-rendering-와-spa" style="position:relative;"><a href="#3--%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%97%90%EA%B2%8C-%EC%A2%8B%EC%9D%80-client-side-rendering-%EC%99%80-spa" aria-label="3  개발자에게 좋은 client side rendering 와 spa permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.  개발자에게 좋은 <strong>Client-side rendering 와 SPA</strong></h3>
+<ul>
+<li><code class="language-text">JSP</code> 와 같은 신경써야 할 언어가 하나 줄음</li>
+<li>사용자가 자신의 컴퓨터에서 코드를 실행하도록 하여 서버의 계산 비용을 절감</li>
+<li>개발자가 주로 JavaScript에 집중할 수 있도록 하기 때문에 생산성에 좋았음</li>
+<li>복잡한 웹을 개발하기 좋았음</li>
+</ul>
+<h3 id="4-client-side-rendering-의-문제" style="position:relative;"><a href="#4-client-side-rendering-%EC%9D%98-%EB%AC%B8%EC%A0%9C" aria-label="4 client side rendering 의 문제 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Client-side rendering 의 문제</h3>
+<ul>
+<li>초기 로딩속도가 느림 !
+<ul>
+<li>JavaScript를 다운로드하여 실행하고 JavaScript를 통해 DOM을 조작하는 것은 많이 비용이 듦</li>
+<li>많은 스크립트와 기타 파일(이미지나 CSS)이 동시에 로드되면 로드 시간이 더욱 악화</li>
+<li>특히, 인프라가 좋지 않은 나라일 경우 이 문제가 더욱 더 심해짐</li>
+<li>모바일 웹의 경우는 이 때 충분히 강력하지 않았고 무선 네트워크 속도는 오늘날만큼 크지 않았었음</li>
+</ul>
+</li>
+<li>SEO
+<ul>
+<li>크롤러 봇은 HTML을 스크래핑 함</li>
+<li>Client-side rendering은 비어있는 HTML에 Javascript 로 화면을 그리기 때문에 스크래핑 한 이후에 페이지가 로드됨</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-다시-server-side-rendering으로-" style="position:relative;"><a href="#5-%EB%8B%A4%EC%8B%9C-server-side-rendering%EC%9C%BC%EB%A1%9C-" aria-label="5 다시 server side rendering으로  permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. 다시 Server-side rendering으로 !</h3>
+<ul>
+<li>느렸기 때문에 다시 server side rendering으로 전환해야 했지만, Angular나 React와 같은 프레임워크를 버리고 싶지 않았음</li>
+<li><a href="https://reactjs.org/docs/react-dom-server.html">ReactDOMServer</a> , <a href="https://ssr.vuejs.org/">vue-server-renderer</a>,  <a href="https://angular.io/guide/universal">Angular Universal</a> 와 같은 라이브러리를 쓰면 초기 페이지 로딩에 <code class="language-text">hydration</code> 과정을 도입하여 client side 에서 javascript 가 그릴 HTML을 미리 추출함 → 클라이언트에 초기 HTML 응답을 더 빨리 전달</li>
+<li>추가적으로 <a href="https://github.com/ModuleLoader/es-module-loader">lazy module loading</a>, <a href="https://webpack.js.org/guides/code-splitting/">code splitting</a>, <a href="https://webpack.js.org/concepts/">bundling</a> 도입으로 훨씬 빨라짐</li>
+</ul>
+<h3 id="6-그래서-nextjs-" style="position:relative;"><a href="#6-%EA%B7%B8%EB%9E%98%EC%84%9C-nextjs-" aria-label="6 그래서 nextjs  permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. 그래서 Next.js ?</h3>
+<ul>
+<li>정적일 수 있는 페이지들의 최적화</li>
+<li>Next.js는 <strong>정적사이트와 동적 사이트를 모두</strong> 잘 처리할 수 있는 페이지 로드 시간에 최적화된 React 프레임워크 (Static-Site Generation, Server-Side Rendering, Client-Side Rendering 모두 지원)
+<ul>
+<li>초기에 사용자가 Server에 페이지 접속을 요청하면, SSR방식으로 렌더링 될 HTML을 보냄</li>
+<li>사용자, 페이지가 서로 상호작용하여 다른 페이지로 이동할 땐, Server가 아닌 CSR방식으로 브라우저에서 처리함.</li>
+</ul>
+</li>
+<li>code splitting 자동화 - Bundling 된 파일을 분할해서 로드하여 초기 구동 속도를 빠르게 하고 사용자들에게도 눈에 띄는 성능 향상을 제공</li>
+<li><code class="language-text">/products/1234</code> 와 같은 동적 URL 매개변수를 허용하는 페이지의 경우에도 <strong>Next.js의 incremental 정적 생성 기능</strong> 을 사용하여 런타임에 정적 페이지를 생성 할 수 있음.</li>
+<li>Vercel에 배포하면 Next.js가 "그냥 작동함." 앱은 전 세계의 서버에 자동으로 배포(CDN)되므로 어디서나 빠르게 로드 됨. Vercel이 자동으로 서버를 관리하므로 사용하지 않는 서버에 대해 비용을 지불하거나 충분한 서버 비용을 지불하지 않아 앱이 느려지는 것에 대해 걱정할 필요가 없음</li>
+</ul>
+<br/>
+<br/>
+<h2 id="결론" style="position:relative;"><a href="#%EA%B2%B0%EB%A1%A0" aria-label="결론 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>결론</h2>
+<h3 id="jsp" style="position:relative;"><a href="#jsp" aria-label="jsp permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jsp</h3>
+<p>사용자의 요청마다 서버에서 html로 응답</p>
+<h3 id="nextjs" style="position:relative;"><a href="#nextjs" aria-label="nextjs permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>next.js</h3>
+<p>SSR (default는 SSG) 와 CSR을 전략적으로 사용</p>
+<p>결국, next.js에서 말하는 SSR도 SPA로 동작한다.(특히 SSG 는 빌드 시 만들어진 정적파일로 더 빠르게 응답할 수 있음)</p>
+<p><code class="language-text">empty html</code>의 SPA 형태가 아닌 Server Side에서 <code class="language-text">hydration</code>된 <code class="language-text">html</code>을 SPA로 사용하는 것이다.</p>
+<blockquote>
+<p>여기서 SSG란 static-site generation으로 빌드 시에 prerender 하는 것을 의미한다. default 값이다</p>
+</blockquote>
+<hr>
+<p>아 그리고 next.js에서 SSG와 SSR을 언제 사용하면 좋을지에 대한 내용은 공식문서를 참고하면 좋다. 마침 이전에 번역도 해놨다</p>
+<ul>
+<li><a href="https://nextjs.org/docs/basic-features/pages#two-forms-of-pre-rendering">next.js - Two forms of Pre-rendering</a></li>
+<li><a href="http://localhost:8000/2021-12-08-Nextjs-page-prerender/#summary">번역 next.js prerender 요약</a></li>
+</ul></div></div><div class="TableOfContents__TableOfContentsBlock-sc-1pewf3q-0 SNHTV"><ul>
+<li>
+<p><a href="#%EC%9B%B9%EC%9D%B4-%EB%B3%80%ED%99%94%ED%95%B4-%EC%99%94%EB%8D%98-%ED%9D%90%EB%A6%84%EC%9D%84-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%9A%94%EC%95%BD%ED%95%98%EC%9E%90%EB%A9%B4">웹이 변화해 왔던 흐름을 간단히 요약하자면,</a></p>
+<ul>
+<li><a href="#1-%EB%8F%99%EC%A0%81%EC%9D%B8-%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80%EB%A5%BC-%EC%9C%84%ED%95%9C-jsp-php-asp">1. 동적인 웹페이지를 위한 JSP, PHP, ASP...</a></li>
+<li><a href="#2-javascript-%EC%99%80-ajax%EA%B0%80-%EB%8D%94-%EB%B3%B5%EC%9E%A1%ED%95%9C-%EC%9B%B9%EC%9D%84-%EB%A7%8C%EB%93%A6">2. javascript 와 ajax가 더 복잡한 웹을 만듦</a></li>
+<li><a href="#3--%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%97%90%EA%B2%8C-%EC%A2%8B%EC%9D%80-client-side-rendering-%EC%99%80-spa">3.  개발자에게 좋은 <strong>Client-side rendering 와 SPA</strong></a></li>
+<li><a href="#4-client-side-rendering-%EC%9D%98-%EB%AC%B8%EC%A0%9C">4. Client-side rendering 의 문제</a></li>
+<li><a href="#5-%EB%8B%A4%EC%8B%9C-server-side-rendering%EC%9C%BC%EB%A1%9C-">5. 다시 Server-side rendering으로 !</a></li>
+<li><a href="#6-%EA%B7%B8%EB%9E%98%EC%84%9C-nextjs-">6. 그래서 Next.js ?</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EA%B2%B0%EB%A1%A0">결론</a></p>
+<ul>
+<li><a href="#jsp">jsp</a></li>
+<li><a href="#nextjs">next.js</a></li>
+</ul>
+</li>
+</ul></div></div></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2021-12-30-jsp-vs-nextjs/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-8133340f0429c3792863.js"],"app":["/app-22a5de554f2225475e6f.js"],"component---src-components-post-template-tsx":["/component---src-components-post-template-tsx-dcd3dcc35d5ef95c6398.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-f93708ea0a3431eb83f2.js"],"component---src-pages-about-tsx":["/component---src-pages-about-tsx-199c5670bf882ca23bb2.js"],"component---src-pages-categories-tsx":["/component---src-pages-categories-tsx-25e6de44dbb97dc92e05.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-04b48f53e03e6e8ad678.js"]};/*]]>*/</script><script src="/polyfill-8133340f0429c3792863.js" nomodule=""></script><script src="/component---src-components-post-template-tsx-dcd3dcc35d5ef95c6398.js" async=""></script><script src="/commons-568f831de2071dee71ad.js" async=""></script><script src="/app-22a5de554f2225475e6f.js" async=""></script><script src="/framework-27f7b01b639722126502.js" async=""></script><script src="/webpack-runtime-4ed4a88971e0b321aa3b.js" async=""></script></body></html>
