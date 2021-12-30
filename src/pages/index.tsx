@@ -9,6 +9,10 @@ import Layout from '../components/Layout';
 import PostItem from '../components/Main/PostItem';
 import Navigation from '../components/Main/Navigation';
 
+const PostWrapper = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+`;
 const PostUl = styled.ul`
   margin-top: 1rem;
   padding-left: 0;
@@ -42,14 +46,14 @@ function IndexPage({
   const location = useLocation();
   return (
     <Layout pageTitle="Blog">
-      <>
+      <PostWrapper>
         <Navigation pathname={location.pathname} />
         <PostUl>
           {filteredPost.map((edge: Edge) => (
             <PostItem key={edge.node.id} post={edge.node} />
           ))}
         </PostUl>
-      </>
+      </PostWrapper>
     </Layout>
   );
 }
