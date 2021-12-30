@@ -30,6 +30,7 @@ const Container = styled.main`
 `;
 
 const Contents = styled.section`
+  margin-top: 4rem;
   padding: 1rem;
 `;
 
