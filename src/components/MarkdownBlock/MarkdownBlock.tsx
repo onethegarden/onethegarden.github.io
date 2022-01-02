@@ -38,6 +38,7 @@ const Markdown = styled.div`
   h3 {
     font-size: 1.5rem;
     line-height: 1.6;
+    margin-bottom: 0;
   }
   p {
     padding-left: 0;
