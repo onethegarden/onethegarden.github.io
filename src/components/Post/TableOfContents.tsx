@@ -14,6 +14,9 @@ const TableOfContentsBlock = styled.div`
   word-break: break-all;
   padding: 1.2rem;
   margin-left: 1rem;
+  height: 500px;
+  overflow: scroll;
+
   li {
     color: ${({ theme }) => theme.color.gray4};
     font-size: 0.9rem;
