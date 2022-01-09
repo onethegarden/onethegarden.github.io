@@ -19,7 +19,7 @@ const Markdown = styled.div`
   h1,
   h2,
   h3 {
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 0 0;
     font-weight: 600;
   }
 
@@ -60,7 +60,6 @@ const Markdown = styled.div`
 
   ol,
   ul {
-    margin: 1rem 0;
     margin-left: 2rem;
   }
   hr {
