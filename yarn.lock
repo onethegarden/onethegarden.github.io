@@ -6383,9 +6383,9 @@ gatsby-telemetry@^2.11.0, gatsby-telemetry@^2.14.0:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-transformer-remark@^4.7.0:
+gatsby-transformer-remark@4.11.0:
   version "4.11.0"
-  resolved "https://registry.npmjs.org/gatsby-transformer-remark/-/gatsby-transformer-remark-4.11.0.tgz"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-4.11.0.tgz#80c2f7473cc757f763abd1c0942436ffcb7a2365"
   integrity sha512-K00qbvSVq5puyDmZZp+WOU8CmBJRpjmJt1t8yl30My66PiDT8u242xVYUE0qdsKEr2gz5npE0w4nj/5Hgtfw7Q==
   dependencies:
     "@babel/runtime" "^7.15.4"
@@ -11468,6 +11468,11 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+
+requires@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/requires/-/requires-1.0.2.tgz#76304e821345622fe3fac0b0711a1e4f2828f0fa"
+  integrity sha1-djBOghNFYi/j+sCwcRoeTygo8Po=
 
 resolve-alpn@^1.0.0:
   version "1.2.1"
