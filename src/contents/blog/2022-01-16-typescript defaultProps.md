@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: ['typescript', 'react']
+categories: ['typescript', 'React']
 title: react typescript 에서의 defaultProps
 ---
 
