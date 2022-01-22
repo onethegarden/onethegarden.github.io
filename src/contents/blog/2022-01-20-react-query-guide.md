@@ -519,3 +519,140 @@ function MyPosts() {
   )
 }
 ```
+
+## 15. Supplying a Query with Initial Data
+
+initialData를 options을 설정하면 초기 데이터를 설정하고 초기 로딩 상태를 건너 뛸 수 있다
+
+초기에 설정할 수 있는 데이터가 있을 때 사용
+
+```jsx
+function Todos() {
+   const result = useQuery('todos', () => fetch('/todos'), {
+     initialData: initialTodos,
+   })
+ }
+```
+
+
+## 16. Marking Initial Query data as Stale
+
+initialData 와 staleTime options을 설정하면 설정한 시간동안 refetch하지 않을 수 있다. (기본값은 0)
+
+```jsx
+function Todos() {
+   const result = useQuery('todos', () => fetch('/todos'), {
+     initialData: initialTodos,
+     staleTime: 1000,
+   })
+ }
+```
+
+## 17. Querying Related Lists and Items
+
+list에 관련된 item 을 불러오는 쿼리 
+
+posts → post 를 불러온다고 예를 들었을 때
+
+postId로 각각의 불러오기 때문에 postId로  `complex key`를 사용한다.
+
+```jsx
+  const postQuery = useQuery(['post', postId], () => {
+    return axios
+      .get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+      .then(res => res.data)
+  })
+```
+
+## 18. Seeding Initial Query Data from Other Queries
+
+ posts 의 목록을 조회 한 후 id로 post를 다시 가지고 올 때 먼저 조회한 posts의 데이터를 `queryCache`에서 가지고 와서 `initialData` 로 설정할 수 있다.
+
+`queryCache.getQueryData('posts')` 
+
+```jsx
+const postQuery = useQuery(
+    ['post', postId],
+    async () => {
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      return axios
+        .get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+        .then(res => res.data)
+    },
+    {
+      initialData: () =>
+        queryCache.getQueryData('posts')?.find(post => post.id === postId),
+    }
+  )
+```
+
+## 19. Using Query Data to Seed Future Queries
+
+나중에 쓸 데이터를 위해 캐싱하기
+
+`post`의 목록을 조회하고 나중에 `['post', post.id]` 로 조회하는 `query`를 위해 `queryCache`에 `setQueryData`로 캐싱해 둔다
+
+```jsx
+const postsQuery = useQuery('posts', async () => {
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    const posts = await axios
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .then(res => res.data)
+
+    posts.forEach(post => {
+      queryCache.setQueryData(['post', post.id], post)
+    })
+
+    return posts
+  })
+```
+
+## 20. Query Side-Effects
+
+- useQuery의 `side-effect`를 위한 `callback option`들이 있다.
+- `onSuccess` : 성공적으로 새 데이터를 가지고 올 때
+- `onError` : 에러일 때 실행
+- `onSettled` : 성공, 에러 둘다 실행, 성공시엔 `error`가 `undefined`, 실패 시엔 `data`가 `undefined`
+
+```jsx
+const postsQuery = useQuery('posts', fetchPosts, {
+    onSuccess: data => {
+    ****},
+    onError: error => {
+		},
+    onSettled: (data, error) => {
+		},
+  })
+```
+
+## 21. Scroll Restoration
+
+- `Scroll Restoration`: 뒤로가기를 누르면 이전에 방문한 페이지의 스크롤 위치로 가는 것, client side rendering이 되면서 퇴행했다고 한다.
+- react-query에서는 기본 값. 쿼리 결과가 캐시되고, 쿼리가 렌더링 될 때 동기적으로 찾을 수 있기 때문.
+- garbage 가 수집되지 않는 한 Scroll Restoration은 기본값이다.
+- garbage 수집 설정은 cacheTime으로 가능하고, 기본값은 5분이다
+
+```jsx
+const postsQuery = useQuery('posts', fetchPosts, {
+      cacheTime: 10000,
+	})
+```
+
+## 22. Query Polling with Refetch Intervals
+
+- 일정 간격마다 서버에 요청하기
+- `refetchInterval` : 서버에 요청할 시간 간격
+- `refetchIntervalInBackground` : 열려있는 탭이 활성화 되어 있으라 때에도 요청할 건지 여부 기본값은 `false`
+
+```jsx
+const timeQuery = useQuery(
+    'posts',
+    async () => {
+      return axios.get('/api/time').then(res => res.data)
+    },
+    {
+      refetchInterval: 1000,
+      refetchIntervalInBackground: true,
+    }
+  )
+```
