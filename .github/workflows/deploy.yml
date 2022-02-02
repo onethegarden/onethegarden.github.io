@@ -26,6 +26,7 @@ jobs:
         run: yarn build
         env:
           NODE_ENV: production
+          GATSBY_API_URL: ${{ secrets.GATSBY_API_URL }}
       - uses: peaceiris/actions-gh-pages@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
