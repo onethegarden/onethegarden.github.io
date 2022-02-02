@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import '../lib/styles/code.css';
 
+import { graphql } from 'gatsby';
 import Layout from './Layout';
 import { Data } from '../models/blog';
 import MarkdownBlock from './MarkdownBlock/MarkdownBlock';
@@ -71,5 +72,24 @@ function PostTemplate({ data }: PostTempalteProps) {
     </Layout>
   );
 }
+
+export const queryMarkdownDataBySlug = graphql`
+  query queryMarkdownDataBySlug($slug: String) {
+    allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+          }
+          tableOfContents
+        }
+      }
+    }
+  }
+`;
 
 export default PostTemplate;
