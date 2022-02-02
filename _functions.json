@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "functionRoute": "apiClient",
+        "pluginName": "default-site-plugin",
+        "originalAbsoluteFilePath": "/home/runner/work/onethegarden.github.io/onethegarden.github.io/src/api/apiClient.ts",
+        "originalRelativeFilePath": "apiClient.ts",
+        "relativeCompiledFilePath": "apiClient.js",
+        "absoluteCompiledFilePath": "/home/runner/work/onethegarden.github.io/onethegarden.github.io/.cache/functions/apiClient.js"
+    },
+    {
+        "functionRoute": "count",
+        "pluginName": "default-site-plugin",
+        "originalAbsoluteFilePath": "/home/runner/work/onethegarden.github.io/onethegarden.github.io/src/api/count.ts",
+        "originalRelativeFilePath": "count.ts",
+        "relativeCompiledFilePath": "count.js",
+        "absoluteCompiledFilePath": "/home/runner/work/onethegarden.github.io/onethegarden.github.io/.cache/functions/count.js"
+    }
+]
