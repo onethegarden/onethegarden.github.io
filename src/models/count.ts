@@ -1,8 +1,17 @@
+export interface CountsResult {
+  data: Count[];
+}
+
+export interface CountResult {
+  data: Count;
+}
+
 export interface Count {
-  data: {
-    attributes: {
-      url: string;
-      count: number;
-    };
-  };
+  id: number;
+  attributes: Attributes;
+}
+
+export interface Attributes {
+  url: string;
+  count: number;
 }

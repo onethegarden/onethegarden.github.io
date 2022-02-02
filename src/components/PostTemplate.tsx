@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
-
 import '../lib/styles/code.css';
 
 import Layout from './Layout';
@@ -9,7 +7,6 @@ import { Data } from '../models/blog';
 import MarkdownBlock from './MarkdownBlock/MarkdownBlock';
 import TableOfContentsBlock from './Post/TableOfContents';
 import { countAPI } from '../api/count';
-import theme from '../lib/styles/theme';
 
 const PostTitle = styled.h1`
   font-size: 3rem;
@@ -46,14 +43,19 @@ type PostTempalteProps = {
 };
 
 function PostTemplate({ data }: PostTempalteProps) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState('-');
   const {
-    node: { html, frontmatter, tableOfContents },
+    node: { html, frontmatter, tableOfContents, fields },
   } = data.allMarkdownRemark.edges[0];
+  const url = fields.slug.replace(/\//gi, '');
 
   useEffect(async () => {
-    const result = await countAPI.getCount('test');
-    setCount(result.data.attributes.count);
+    const selectCount = await (await countAPI.getCount(url)).data[0];
+    const result = await countAPI.updateCount({
+      id: selectCount.id,
+      form: { url, count: selectCount.attributes.count + 1 },
+    });
+    setCount(String(result.data.attributes.count));
   }, []);
 
   return (
