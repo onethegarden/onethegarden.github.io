@@ -80,6 +80,10 @@ function Layout({ pageTitle, children }: LayoutType) {
           <meta name="twitter:image" content={githubProfile} />
           <meta name="twitter:site" content={author} />
           <meta name="twitter:creator" content={author} />
+          <meta
+            name="google-site-verification"
+            content="Bad8nElDQa65Wz4SGqO5bBA14lbEL6-eNs8vmoU-WFk"
+          />
         </Helmet>
         <GlobalStyle />
         <Header githubProfile={githubProfile} title={title} />
