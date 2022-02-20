@@ -2,10 +2,13 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
+// eslint-disable-next-line import/no-unresolved
+import { useLocation } from '@reach/router';
 import GlobalStyle from './common/GlobalStyle';
 import Header from './common/Header';
 import theme from '../lib/styles/theme';
 import Favicon from '../images/favicon.ico';
+import Navigation from './Main/Navigation';
 
 type LayoutType = {
   pageTitle: string;
@@ -30,11 +33,14 @@ const Container = styled.main`
 `;
 
 const Contents = styled.section`
+  margin: 0 auto;
   margin-top: 4rem;
   padding: 1rem;
+  max-width: 800px;
 `;
 
 function Layout({ pageTitle, children }: LayoutType) {
+  const location = useLocation();
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -50,6 +56,7 @@ function Layout({ pageTitle, children }: LayoutType) {
   const { title, siteUrl, author, description } = data.site.siteMetadata;
   const githubProfile =
     'https://avatars1.githubusercontent.com/u/51187540?s=460&v=4';
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -87,7 +94,12 @@ function Layout({ pageTitle, children }: LayoutType) {
         </Helmet>
         <GlobalStyle />
         <Header githubProfile={githubProfile} title={title} />
-        <Contents>{children}</Contents>
+        <Contents>
+          {pageTitle !== 'post' ? (
+            <Navigation pathname={location.pathname} />
+          ) : null}
+          {children}
+        </Contents>
       </Container>
     </ThemeProvider>
   );

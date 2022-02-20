@@ -5,6 +5,8 @@ import { Link } from 'gatsby';
 const NavigationBlock = styled.nav`
   border-bottom: solid 1px ${({ theme }) => theme.color.gray2};
   line-height: 30px;
+  margin-bottom: 20px;
+  color: #8890dc;
   span {
     color: ${({ theme }) => theme.color.gray4};
   }
@@ -19,11 +21,16 @@ const ToggleLink = styled(Link)<{ isActive: boolean }>`
   font-size: 12px;
   font-size: 1.2rem;
   padding: 0 10px;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.purple5};
+  }
+
   ${({ isActive }) =>
     isActive &&
     css`
-      border-bottom: solid 2px ${({ theme }) => theme.color.blue4};
-      color: ${({ theme }) => theme.color.blue4};
+      border-bottom: solid 2px ${({ theme }) => theme.color.purple5};
+      color: ${({ theme }) => theme.color.purple5};
     `}
 `;
 
@@ -36,6 +43,7 @@ function Navigation({ pathname }: NavigationProps) {
     { name: 'posts', link: '/' },
     { name: 'categories', link: '/categories' },
   ];
+
   return (
     <NavigationBlock>
       {menus.map((menu) => (
