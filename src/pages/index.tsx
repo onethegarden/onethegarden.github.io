@@ -2,17 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
-// eslint-disable-next-line import/no-unresolved
-import { useLocation } from '@reach/router';
 import { Data, Node, Edge } from '../models/blog';
 import Layout from '../components/Layout';
 import PostItem from '../components/Main/PostItem';
-import Navigation from '../components/Main/Navigation';
 
-const PostWrapper = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-`;
 const PostUl = styled.ul`
   margin-top: 1rem;
   padding-left: 0;
@@ -43,17 +36,13 @@ function IndexPage({
       : true,
   );
 
-  const location = useLocation();
   return (
     <Layout pageTitle="Blog">
-      <PostWrapper>
-        <Navigation pathname={location.pathname} />
-        <PostUl>
-          {filteredPost.map((edge: Edge) => (
-            <PostItem key={edge.node.id} post={edge.node} />
-          ))}
-        </PostUl>
-      </PostWrapper>
+      <PostUl>
+        {filteredPost.map((edge: Edge) => (
+          <PostItem key={edge.node.id} post={edge.node} />
+        ))}
+      </PostUl>
     </Layout>
   );
 }

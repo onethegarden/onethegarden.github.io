@@ -11,24 +11,24 @@ const CategoryListWrapper = styled.ul`
 `;
 
 const Category = styled.li`
-  margin: 0.3rem;
-  margin-right: 2rem;
-  padding: 0.5rem 0;
-  font-size: 18px;
-  font-weight: 400;
-  margin-right: 1rem;
-  border-radius: 0.3rem;
-  padding: 0.2rem 1rem;
-  background-color: ${({ theme }) => theme.color.gray1};
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  display: inline-block;
+  height: 26px;
+  margin: 4px 4px 0 0;
+  padding: 0 10px;
+  font-size: 13px;
+  line-height: 27px;
+  background-color: ${({ theme }) => theme.color.purple1};
+  vertical-align: top;
+
   a {
     color: ${({ theme }) => theme.color.gray3};
     text-decoration: none;
   }
+
   &:hover {
-    background-color: ${({ theme }) => theme.color.gray2};
+    background-color: ${({ theme }) => theme.color.purple2};
     transition-duration: 0.5s;
+    color: ${({ theme }) => theme.color.purple5};
   }
 `;
 
