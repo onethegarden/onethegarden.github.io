@@ -64,7 +64,7 @@ function PostTemplate({ data }: PostTempalteProps) {
       <PostWrapper>
         <PostContents>
           <PostTitle>{frontmatter.title}</PostTitle>
-          <ViewContents>{count} views</ViewContents>
+          {count !== '-' ? <ViewContents>{count} views</ViewContents> : null}
           <MarkdownBlock htmlText={html} />
         </PostContents>
         <TableOfContentsBlock toc={tableOfContents} />
