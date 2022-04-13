@@ -8,6 +8,7 @@ import { Data } from '../models/blog';
 import MarkdownBlock from './MarkdownBlock/MarkdownBlock';
 import TableOfContentsBlock from './Post/TableOfContents';
 import { countAPI } from '../api/count';
+import Utterances from './common/Comments';
 
 const PostTitle = styled.h1`
   font-size: 3rem;
@@ -66,6 +67,7 @@ function PostTemplate({ data }: PostTempalteProps) {
           <PostTitle>{frontmatter.title}</PostTitle>
           {count !== '-' ? <ViewContents>{count} views</ViewContents> : null}
           <MarkdownBlock htmlText={html} />
+          <Utterances repo="onethegarden/blog-comments" theme="github-light" />
         </PostContents>
         <TableOfContentsBlock toc={tableOfContents} />
       </PostWrapper>
