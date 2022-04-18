@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: ['centOS']
+path: react-centos-nginx
 title: CentOS에서 Nginx로 REACT배포
 ---
 

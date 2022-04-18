@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: ['React']
+path: react-supported-browsers
 title: 번역 CRA Supported Browsers and Features
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: ['interview']
+path: frontend-interview
 title: Front-End interview questions(이직 후기)
 ---
 

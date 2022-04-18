@@ -66,6 +66,7 @@ export const query = graphql`
             layout
             title
             categories
+            path
           }
           parent {
             ... on File {

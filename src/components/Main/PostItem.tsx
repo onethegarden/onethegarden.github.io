@@ -15,6 +15,7 @@ type PostItemProps = {
     };
     id: string;
     frontmatter: {
+      path: string;
       title: string;
       categories: string[];
       thumbnail: {
@@ -57,12 +58,11 @@ const Date = styled.p`
 `;
 
 function PostItem({ post }: PostItemProps) {
-  const { slug } = post.fields;
-  const { title } = post.frontmatter;
+  const { title, path } = post.frontmatter;
   const { modifiedTime: date } = post.parent;
   return (
     <PostItemBlock>
-      <Link to={slug}>
+      <Link to={`blog/${path}/`}>
         {post.frontmatter.thumbnail?.childImageSharp && (
           <Img
             fluid={post.frontmatter.thumbnail.childImageSharp.fluid}

@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: ['react-query', 'React']
+path: react-query-queries
 title: react-query guide - Queries
 ---
 

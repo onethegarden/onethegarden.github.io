@@ -1,6 +1,7 @@
 ---
 layout: post
 title: CORS Error 해결
+path: cors-error
 categories: ['CORS']
 ---
 

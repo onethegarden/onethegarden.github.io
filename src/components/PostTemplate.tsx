@@ -83,6 +83,7 @@ export const queryMarkdownDataBySlug = graphql`
           html
           frontmatter {
             title
+            path
           }
           fields {
             slug

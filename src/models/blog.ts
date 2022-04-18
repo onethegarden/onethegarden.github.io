@@ -25,6 +25,7 @@ export interface Node {
   id: string;
   tableOfContents: string;
   frontmatter: {
+    path: string;
     layout: string;
     title: string;
     categories: string[];

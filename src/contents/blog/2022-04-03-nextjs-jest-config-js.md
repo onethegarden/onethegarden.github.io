@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: ['next.js']
+path: next-jest-configuration
 title: (next.js 12.1) zero configuration jest plugin
 ---
 
