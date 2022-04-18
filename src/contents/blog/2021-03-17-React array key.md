@@ -1,8 +1,8 @@
 ---
 layout: post
 title: React array key
+path: react-array-key
 categories: ["React"]
-thumbnail: "../images/react.png"
 ---
 
 ## React key 존재 유무에 따른 업데이트 방식

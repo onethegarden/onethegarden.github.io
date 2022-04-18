@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: ['next', 'ssr']
+path: ssr-ssg
 title: SSR..? SSG..? jsp...? next.js? 뭐가 다른데?
 ---
 

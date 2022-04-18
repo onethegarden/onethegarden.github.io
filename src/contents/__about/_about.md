@@ -1,6 +1,7 @@
 ---
 layout: about
 title: about
+path: about
 categories: ["about"]
 ---
 

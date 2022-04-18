@@ -18,7 +18,7 @@ function Comments({ repo, theme }: IUtterancesProps) {
       repo,
       theme,
       'issue-term': 'pathname',
-      label: '✨💬✨',
+      label: 'comments',
       crossOrigin: 'anonymous',
       async: 'true',
     };
@@ -29,7 +29,6 @@ function Comments({ repo, theme }: IUtterancesProps) {
 
     containerRef.current!.appendChild(utterances);
   }, [repo]);
-
   return <div ref={containerRef} />;
 }
 

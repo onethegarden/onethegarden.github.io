@@ -1,6 +1,7 @@
 ---
 layout: post
 title: git commit username 수정하기
+path: git-rebase-username
 categories: ['Git']
 ---
 

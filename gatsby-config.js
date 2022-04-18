@@ -11,13 +11,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-canonical-urls',
-      options: {
-        siteUrl: '<https://onethegarden.github.io/>',
-        stripQueryString: true,
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: `blog`,

@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Programers JavascriptStudy Review
+title: Programmers JavascriptStudy Review
+path: programmers-javascript-study
 categories: ['Review']
 ---
 

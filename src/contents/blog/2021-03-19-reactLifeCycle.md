@@ -1,8 +1,8 @@
 ---
 layout: post
-title: React LIfecycle of Component
+title: React Lifecycle of Component
+path: react-lifecycle
 categories: ['React']
-thumbnail: '../images/react.png'
 ---
 
 ## React LIfecycle of Component

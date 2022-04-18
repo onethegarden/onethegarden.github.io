@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: ['react-query', 'React']
+path: react-query-invalidation
 title: react-query guide - Invalidation
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Type alias vs Interface
+path: typealias-vs-interface
 categories: ['typescript']
 ---
 

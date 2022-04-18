@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: ['Next']
+path: next-page-prerender
 title: 번역 Next.js 의 page, pre-render
 ---
 
